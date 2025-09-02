@@ -1,0 +1,170 @@
+import React from "react";
+
+const Home: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col items-center justify-start">
+      {/* ================= HERO SECTION ================= */}
+      <section className="text-center mt-16 px-6">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-400 via-blue-500 to-blue-400 bg-clip-text text-transparent leading-[1.2] pb-2">
+          Quantum Learning
+        </h1>
+        <p className="mt-4 text-xl text-gray-300 max-w-2xl mx-auto">
+          Innovative special skills education through Public Speaking,
+          Financial Literacy, and Innovation programs
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
+          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700">
+            Schedule Consultation
+          </button>
+          <button className="px-6 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300">
+            View Pricing
+          </button>
+        </div>
+      </section>
+
+      {/* ================= STATS SECTION ================= */}
+      <section className="mt-16 flex flex-col sm:flex-row gap-8 text-center text-gray-300">
+        <div>
+          <h3 className="text-3xl font-bold text-white">100%</h3>
+          <p>Satisfaction Rate</p>
+        </div>
+        <div>
+          <h3 className="text-3xl font-bold text-white">3</h3>
+          <p>Skilled Expert Instructors</p>
+        </div>
+        <div>
+          <h3 className="text-3xl font-bold text-white">24/7</h3>
+          <p>Support Available</p>
+        </div>
+      </section>
+
+      {/* ================= CORE PROGRAMS ================= */}
+      <section className="mt-24 px-6 max-w-5xl">
+        <h2 className="text-4xl font-bold text-center mb-12">Our Core Programs</h2>
+        <p className="text-center text-gray-300 mb-16">
+          Comprehensive education designed to prepare students for success in the modern world
+        </p>
+        <div className="grid md:grid-cols-3 gap-10">
+          {/* Public Speaking */}
+          <div className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4">Public Speaking & Communication</h3>
+            <p className="text-gray-300 mb-4">
+              Build confidence, clarity, and critical thinking through structured speaking practice and peer feedback.
+            </p>
+            <ul className="space-y-2 text-gray-400">
+              <li>• Presentation Skills</li>
+              <li>• Debate Practice</li>
+              <li>• Storytelling</li>
+              <li>• Public Confidence</li>
+            </ul>
+          </div>
+          {/* Financial Literacy */}
+          <div className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4">Financial Literacy</h3>
+            <p className="text-gray-300 mb-4">
+              Empowering students with age-appropriate financial knowledge for lifelong responsibility.
+            </p>
+            <ul className="space-y-2 text-gray-400">
+              <li>• Money Management</li>
+              <li>• Budgeting Basics</li>
+              <li>• Investment Fundamentals</li>
+              <li>• Smart Spending</li>
+            </ul>
+          </div>
+          {/* Innovation */}
+          <div className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4">Innovation & Entrepreneurship</h3>
+            <p className="text-gray-300 mb-4">
+              Foster creativity, teamwork, and real-world problem-solving through hands-on projects.
+            </p>
+            <ul className="space-y-2 text-gray-400">
+              <li>• Creative Thinking</li>
+              <li>• Business Planning</li>
+              <li>• Problem Solving</li>
+              <li>• Team Collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FLEXIBLE OPTIONS ================= */}
+      <section className="mt-24 px-6 max-w-5xl">
+        <h2 className="text-4xl font-bold text-center mb-12">Flexible Learning Options</h2>
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Synchronous */}
+          <div className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4">Synchronous Classes</h3>
+            <p className="text-gray-300 mb-4">
+              Live, interactive sessions with real-time feedback and peer collaboration through Zoom/Google Meet.
+            </p>
+            <ul className="space-y-2 text-gray-400">
+              <li>• Live instructor interaction</li>
+              <li>• Real-time peer feedback</li>
+              <li>• Group activities & discussions</li>
+            </ul>
+          </div>
+          {/* Asynchronous */}
+          <div className="bg-gray-800 p-6 rounded-xl shadow-lg relative">
+            <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded animate-pulse">
+              Coming Soon!
+            </div>
+            <h3 className="text-2xl font-semibold mb-4">Asynchronous Learning</h3>
+            <p className="text-gray-300 mb-4">
+              Self-paced learning with pre-recorded lessons and flexible scheduling for busy families.
+            </p>
+            <ul className="space-y-2 text-gray-400">
+              <li>• Learn at your own pace</li>
+              <li>• 24/7 access to materials</li>
+              <li>• Weekly instructor check-ins</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= TESTIMONIALS ================= */}
+      <section className="mt-24 px-6 max-w-4xl text-center">
+        <h2 className="text-4xl font-bold mb-12">What Our Families Say</h2>
+        <div className="space-y-12">
+          <blockquote className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <p className="text-gray-300 mb-4">
+              "Both of my children were fully engaged and excited throughout the class. The instructor made even difficult topics clear and relatable, while keeping the session interactive and fun. Quantum Learning creates an environment where learning feels both enjoyable and impactful."
+            </p>
+            <footer className="text-gray-400 font-semibold">— Shefali Sarangal, Parent</footer>
+          </blockquote>
+          <blockquote className="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <p className="text-gray-300 mb-4">
+              "Both of my children loved Quantum Learning. The classes were engaging, interactive, and made even challenging topics clear and fun. They've gained confidence, new skills, and come out of each session excited to share what they've learned."
+            </p>
+            <footer className="text-gray-400 font-semibold">— Mukul Pal, Parent</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* ================= FINAL CTA ================= */}
+      <section className="mt-24 text-center px-6">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          Ready to Transform Your Learning Journey?
+        </h2>
+        <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+          Join thousands of students who have discovered their potential through our innovative programs.
+        </p>
+        <div className="flex justify-center gap-4">
+          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700">
+            Get Started Today
+          </button>
+          <button className="px-6 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300">
+            Learn More About Us
+          </button>
+        </div>
+      </section>
+
+      {/* ================= FOOTER ================= */}
+      <footer className="mt-24 mb-8 text-center text-gray-400 text-sm">
+        © {new Date().getFullYear()} Quantum Learning. All rights reserved.
+      </footer>
+    </div>
+  );
+};
+
+export default Home;
+

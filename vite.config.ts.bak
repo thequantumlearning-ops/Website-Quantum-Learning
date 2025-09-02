@@ -1,0 +1,10 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { cloudflare } from "@cloudflare/vite-plugin"
+
+// If you don't use the Cloudflare plugin, you can remove the cloudflare() reference below.
+// Keeping it here because your project had @cloudflare/vite-plugin in devDeps.
+
+export default defineConfig({
+  plugins: [react(), cloudflare()],
+})
