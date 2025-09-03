@@ -2,17 +2,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 
 // Pages
-import Home from "./Home";
-import Pricing from "./Pricing";
-import Schedule from "./Schedule";
-import Enterprise from "./Enterprise";
-import About from "./About";
-import PrivacyPolicy from "./PrivacyPolicy";
-import TermsOfService from "./TermsOfService";
-import RefundPolicy from "./RefundPolicy";
-import CookiePolicy from "./CookiePolicy";
-import Disclaimer from "./Disclaimer";
-import CodeOfConduct from "./CodeOfConduct";
+import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
+import Schedule from "./pages/Schedule";
+import Enterprise from "./pages/Enterprise";
+import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import RefundPolicy from "./pages/RefundPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
+import Disclaimer from "./pages/Disclaimer";
+import CodeOfConduct from "./pages/CodeOfConduct";
 
 export default function App() {
   return (

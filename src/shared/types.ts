@@ -13,3 +13,11 @@ export const AppointmentSchema = {
   datetime: '',
   notes: ''
 } as any;
+
+export type ChatMessageType = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  timestamp: number;
+};
+
