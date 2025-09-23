@@ -1,7 +1,5 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Layout from "./components/Layout";
+import Layout from "./Layout";
 
 import Home from "./pages/Home";
 import Pricing from "./pages/Pricing";
@@ -18,8 +16,8 @@ import CodeOfConduct from "./pages/CodeOfConduct";
 export default function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/schedule" element={<Schedule />} />
@@ -31,8 +29,8 @@ export default function App() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     </Router>
   );
 }

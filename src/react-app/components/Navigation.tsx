@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router';
-import { Menu, X } from 'lucide-react';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/pricing', label: 'Pricing' },
-    { href: '/enterprise', label: 'Enterprise' },
-    { href: '/schedule', label: 'Schedule Consultation' },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/enterprise", label: "Enterprise" },
+    { href: "/schedule", label: "Schedule Consultation" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -23,7 +23,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <img 
+              <img
                 src="https://mocha-cdn.com/01988d47-f944-718c-9e9d-dec488cfbafd/Qunatum-learning.png"
                 alt="Quantum Learning"
                 className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-200"
@@ -42,8 +42,8 @@ export default function Navigation() {
                 to={link.href}
                 className={`text-sm font-medium transition-colors ${
                   isActive(link.href)
-                    ? 'text-blue-500'
-                    : 'text-gray-300 hover:text-white'
+                    ? "text-blue-500"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -72,8 +72,8 @@ export default function Navigation() {
                   to={link.href}
                   className={`block px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
                     isActive(link.href)
-                      ? 'text-blue-500 bg-blue-500/10'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? "text-blue-500 bg-blue-500/10"
+                      : "text-gray-300 hover:text-white hover:bg-white/5"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -87,3 +87,4 @@ export default function Navigation() {
     </nav>
   );
 }
+

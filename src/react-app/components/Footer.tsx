@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-black/30 backdrop-blur-lg border-t border-white/10 mt-20 py-8 text-center text-gray-400 text-sm">
+    <footer className="relative z-50 bg-black/30 backdrop-blur-lg border-t border-white/10 mt-20 py-8 text-center text-gray-400 text-sm">
       <div className="flex flex-wrap justify-center gap-4 mb-4">
         <Link to="/privacy-policy" className="hover:text-white transition">
           Privacy Policy

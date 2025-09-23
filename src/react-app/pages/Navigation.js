@@ -1,5 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { Link } from "react-router-dom";
-export default function Navigation({ onOpenModal }) {
-    return (_jsx("nav", { className: "bg-slate-900 shadow-md fixed w-full z-50", children: _jsxs("div", { className: "max-w-7xl mx-auto px-4 py-3 flex justify-between items-center", children: [_jsx("div", { className: "text-white font-bold text-lg", children: "Quantum Learning" }), _jsxs("div", { className: "flex gap-6 items-center", children: [_jsx(Link, { to: "/", className: "text-gray-200 hover:text-white", children: "Home" }), _jsx(Link, { to: "/about", className: "text-gray-200 hover:text-white", children: "About" }), _jsx(Link, { to: "/pricing", className: "text-gray-200 hover:text-white", children: "Pricing" }), _jsx(Link, { to: "/schedule", className: "text-gray-200 hover:text-white", children: "Schedule" }), _jsx(Link, { to: "/enterprise", className: "text-gray-200 hover:text-white", children: "Enterprise" }), _jsx("button", { onClick: onOpenModal, className: "px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition", children: "Join Mailing List" })] })] }) }));
-}
