@@ -80,12 +80,12 @@ export default function About() {
           {/* Krishnav */}
           <div className="bg-slate-800/50 p-8 rounded-2xl shadow-lg text-center">
             <h3 className="text-2xl font-semibold mb-2">Krishnav Gudepu</h3>
-            <p className="text-blue-400 mb-4">Founder</p>
+            <p className="text-blue-400 mb-4">Founder and Master of Public Speaking and Communications</p>
             <p className="text-gray-300">
-              As the Founder of Quantum Learning, I lead the vision of creating
+              As the Founder of Quantum Learning, Krishnav lead the vision of creating
               a platform that inspires students to become confident
               communicators, financially literate decision-makers, and creative
-              innovators. My focus is on blending leadership, technology, and
+              innovators. His focus is on blending leadership, technology, and
               education to prepare students for real-world challenges and
               opportunities.
             </p>

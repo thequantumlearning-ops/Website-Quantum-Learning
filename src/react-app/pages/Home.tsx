@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 
       {/* ================= HERO SECTION ================= */}
       <section className="text-center mt-16 px-6 relative z-10">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-400 via-blue-500 to-blue-400 bg-clip-text text-transparent leading-normal pb-2">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-300 via-blue-500 to-blue-400 bg-clip-text text-transparent leading-normal pb-2">
           Quantum Learning
         </h1>
         <p className="mt-6 text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">

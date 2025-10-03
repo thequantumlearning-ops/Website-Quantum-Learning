@@ -23,6 +23,18 @@ export default function Footer() {
           Code of Conduct
         </Link>
       </div>
+      
+      {/* Contact Email */}
+      <p className="mb-2">
+        Contact us at{" "}
+        <a
+          href="mailto:thequantumlearning@gmail.com"
+          className="text-blue-400 hover:text-blue-300"
+        >
+          thequantumlearning@gmail.com
+        </a>
+      </p>
+
       <p>© {new Date().getFullYear()} Quantum Learning. All rights reserved.</p>
     </footer>
   );

@@ -67,23 +67,23 @@ export default function Pricing() {
             {
               title: "Public Speaking & Communication",
               description:
-                "Transform your child into a confident communicator and natural leader",
-              base: "$250",
-              premium: "$325",
+                "Base ($325): Live weekly classes (2 hrs/week for 9 weeks), instructor feedback, basic digital certificate, access to class recordings, downloadable resources, project submission & evaluation, recap email.\n\nPremium ($375): Everything in Base, plus one 30-min private coaching session, private showcase with recording, printed personalized certificate mailed to student, expanded Digital Parent Toolkit, and portfolio template.",
+              base: "$325",
+              premium: "$375",
             },
             {
               title: "Financial Literacy",
               description:
-                "Give your child the money skills that schools don't teach",
-              base: "$250",
-              premium: "$325",
+                "Base ($325): Live weekly classes (2 hrs/week for 9 weeks), instructor feedback, basic digital certificate, access to class recordings, downloadable resources, project submission & evaluation, recap email.\n\nPremium ($375): Everything in Base, plus one 30-min private coaching session, private showcase with recording, printed personalized certificate mailed to student, expanded Digital Parent Toolkit, and portfolio template.",
+              base: "$325",
+              premium: "$375",
             },
             {
               title: "Innovation & Creativity",
               description:
-                "Unlock your child's creative genius and problem-solving superpowers",
-              base: "$250",
-              premium: "$325",
+                "Base ($325): Live weekly classes (2 hrs/week for 9 weeks), instructor feedback, basic digital certificate, access to class recordings, downloadable resources, project submission & evaluation, recap email.\n\nPremium ($375): Everything in Base, plus one 30-min private coaching session, private showcase with recording, printed personalized certificate mailed to student, expanded Digital Parent Toolkit, and portfolio template.",
+              base: "$325",
+              premium: "$375",
             },
           ].map((course, index) => (
             <div
@@ -93,7 +93,9 @@ export default function Pricing() {
               <h3 className="text-xl font-bold text-white mb-2">
                 {course.title}
               </h3>
-              <p className="text-gray-300 mb-6">{course.description}</p>
+              <p className="text-gray-300 mb-6 whitespace-pre-line">
+                {course.description}
+              </p>
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-slate-800/50 rounded-lg p-4 text-center">
@@ -133,14 +135,18 @@ export default function Pricing() {
             {
               name: "Bronze",
               emoji: "🥉",
-              price: "$500",
+              price: "$495",
+              description:
+                "Includes 1 Core Course (choice of Public Speaking, Financial Literacy, or Innovation). Great value starter option.",
               color: "from-slate-700 to-slate-600",
               highlight: false,
             },
             {
               name: "Silver",
               emoji: "🥈",
-              price: "$800",
+              price: "$795",
+              description:
+                "Includes 1 Core Course + Summer Camp + Certificate + Membership. Balanced option with strong value.",
               color: "from-gray-500 to-gray-700",
               highlight: false,
             },
@@ -148,6 +154,8 @@ export default function Pricing() {
               name: "Gold",
               emoji: "🥇",
               price: "$995",
+              description:
+                "Includes 2 Core Courses + Summer Camp + Membership + Homework Help + 2 hrs Coaching + Toolkit/Portfolio. Most popular choice with $200 savings vs separate purchases.",
               color: "from-yellow-400 via-orange-400 to-pink-500",
               highlight: true,
             },
@@ -155,6 +163,8 @@ export default function Pricing() {
               name: "Platinum",
               emoji: "💎",
               price: "$1,400",
+              description:
+                "Includes everything in Gold + Extra Coaching + Showcase + DIY Curriculum Modules + Premium Certificate. Ultimate all-in-one package.",
               color: "from-purple-500 via-pink-500 to-yellow-500",
               highlight: true,
             },
@@ -171,11 +181,7 @@ export default function Pricing() {
                 {pkg.emoji} {pkg.name}
               </h3>
               <p className="text-3xl font-bold mb-4">{pkg.price}</p>
-              <p className="text-gray-200 text-sm mb-6">
-                {pkg.highlight
-                  ? "⭐ Premium Choice for Families"
-                  : "Great value starter option"}
-              </p>
+              <p className="text-gray-200 text-sm mb-6">{pkg.description}</p>
               <Link
                 to="/schedule"
                 className="w-full inline-flex items-center justify-center px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all"
@@ -198,32 +204,50 @@ export default function Pricing() {
             {
               icon: Users,
               service: "1-on-1 Coaching",
+              description:
+                "Personalized one-on-one sessions with instructors for feedback, guidance, and growth.",
               base: "$75/hour",
               premium: "$100/hour",
             },
             {
               icon: Video,
               service: "Private Virtual Showcase",
-              base: "$20-$40",
-              premium: "$25-$50",
+              description:
+                "20–30 min private session with live feedback and certificate presentation for family.",
+              base: "$25",
+              premium: "$50",
             },
             {
               icon: Award,
               service: "Certificates",
-              base: "$10",
-              premium: "$30-$40",
+              description:
+                "Digital certificate included. Premium versions are printed, personalized, and foil-stamped.",
+              base: "$30",
+              premium: "$40",
             },
             {
               icon: BookOpen,
               service: "Portfolio Template",
-              base: "$5-$10",
-              premium: "$15-$20",
+              description:
+                "Editable templates (Canva or Google Docs) to showcase your child’s projects.",
+              base: "$15",
+              premium: "$20",
             },
             {
               icon: Target,
               service: "Parent Toolkit",
-              base: "$10-$20",
-              premium: "$20-$30",
+              description:
+                "Includes goal tracker, feedback forms, project checklist, and personalized resources.",
+              base: "$20",
+              premium: "$30",
+            },
+            {
+              icon: Calendar,
+              service: "Summer Intensive Camp",
+              description:
+                "4–5 days, 2–3 hrs per day. Interactive deep-dive into our core subjects.",
+              base: "$300",
+              premium: "$400",
             },
           ].map((s, i) => (
             <div
@@ -234,6 +258,7 @@ export default function Pricing() {
                 <s.icon className="w-6 h-6 text-blue-400 mr-2" />
                 <h3 className="text-lg font-bold text-white">{s.service}</h3>
               </div>
+              <p className="text-gray-300 text-sm mb-2">{s.description}</p>
               <p className="text-gray-300 text-sm">
                 Base:{" "}
                 <span className="font-bold text-blue-400">{s.base}</span> | Premium:{" "}
@@ -254,16 +279,22 @@ export default function Pricing() {
             {
               icon: Zap,
               title: "MasterClass Experience",
+              description:
+                "2–3 hour immersive weekend class covering the entire curriculum with activities and a mid-session break.",
               price: "$100",
             },
             {
               icon: Trophy,
               title: "Capstone Project Showcase",
+              description:
+                "End-of-year comprehensive project where students present a debate, TED talk, business prototype, or innovation model with feedback.",
               price: "$300",
             },
             {
               icon: Crown,
               title: "Leadership Club",
+              description:
+                "Exclusive club where students learn without boundaries. Tutors share advanced skills in an accessible format.",
               price: "$150",
             },
           ].map((exp, i) => (
@@ -275,6 +306,7 @@ export default function Pricing() {
                 <exp.icon className="w-6 h-6 text-yellow-400 mr-2" />
                 <h3 className="text-lg font-bold text-white">{exp.title}</h3>
               </div>
+              <p className="text-gray-300 text-sm mb-4">{exp.description}</p>
               <p className="text-2xl font-bold text-yellow-300">{exp.price}</p>
             </div>
           ))}
@@ -292,21 +324,20 @@ export default function Pricing() {
               Licensed Curriculum
             </h3>
             <p className="text-gray-300 mb-4">
-              Schools and tutors gain full rights to run Quantum Learning
-              programs independently
+              Schools and tutors gain rights to run Quantum Learning programs independently.
             </p>
-            <p className="text-blue-400 font-bold">Base: $750</p>
-            <p className="text-yellow-400 font-bold">Premium: $1,200</p>
+            <p className="text-blue-400 font-bold">Base: $500</p>
+            <p className="text-yellow-400 font-bold">Premium: $899</p>
           </div>
           <div className="bg-gradient-to-br from-white/10 to-white/5 p-6 rounded-2xl border border-white/10">
             <h3 className="text-xl font-bold text-white mb-2">
-              DIY Curriculum Modules (Coming Soon)
+              DIY Curriculum Modules
             </h3>
             <p className="text-gray-300 mb-4">
-              Professional PDFs, toolkits, and videos for independent learning
+              Professional PDFs, toolkits, and videos for independent learning.
             </p>
-            <p className="text-blue-400 font-bold">Base: $20-$50</p>
-            <p className="text-yellow-400 font-bold">Premium: $40-$75</p>
+            <p className="text-blue-400 font-bold">Base: $20</p>
+            <p className="text-yellow-400 font-bold">Premium: $40</p>
           </div>
         </div>
       </section>
@@ -356,7 +387,7 @@ export default function Pricing() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 text-center">
+      <section className="relative z-50 py-20 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-normal">
           Your Child's Success Story Starts Today
         </h2>
