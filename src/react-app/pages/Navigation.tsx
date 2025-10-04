@@ -9,7 +9,7 @@ export default function Navigation({ onOpenModal }: NavigationProps) {
     <nav className="bg-slate-900 shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Left: Logo/Brand */}
-        <div className="text-white font-bold text-lg">Quantum Learning</div>
+        <div className="text-white font-bold text-lg">Skillsvera</div>
 
         {/* Right: Links + Button */}
         <div className="flex gap-6 items-center">

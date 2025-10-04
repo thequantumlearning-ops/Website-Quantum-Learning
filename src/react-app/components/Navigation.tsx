@@ -25,12 +25,12 @@ export default function Navigation() {
             <div className="relative">
               <img
                 src="https://mocha-cdn.com/01988d47-f944-718c-9e9d-dec488cfbafd/Qunatum-learning.png"
-                alt="Quantum Learning"
+                alt="Skillsvera"
                 className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-200"
               />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-slate-400 to-blue-500 bg-clip-text text-transparent">
-              Quantum Learning
+              Skillsvera
             </span>
           </Link>
 

@@ -20,7 +20,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative text-center max-w-5xl mx-auto px-6 py-20">
         <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
-          About Quantum Learning
+          About Skillsvera
         </h1>
         <p className="text-xl text-gray-300 mb-8">
           Our mission is to empower young learners with confidence, financial
@@ -82,7 +82,7 @@ export default function About() {
             <h3 className="text-2xl font-semibold mb-2">Krishnav Gudepu</h3>
             <p className="text-blue-400 mb-4">Founder and Master of Public Speaking and Communications</p>
             <p className="text-gray-300">
-              As the Founder of Quantum Learning, Krishnav lead the vision of creating
+              As the Founder of Skillsvera, Krishnav lead the vision of creating
               a platform that inspires students to become confident
               communicators, financially literate decision-makers, and creative
               innovators. His focus is on blending leadership, technology, and

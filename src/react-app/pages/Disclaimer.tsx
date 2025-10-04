@@ -26,7 +26,7 @@ export default function Disclaimer() {
             </h1>
           </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Important information about Quantum Learning's educational services and what families can expect.
+            Important information about Skillsvera's educational services and what families can expect.
           </p>
           <p className="text-sm text-gray-400 mt-4">Last Updated: {new Date().toLocaleDateString()}</p>
         </div>
@@ -47,7 +47,7 @@ export default function Disclaimer() {
                 <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4">
                   <p><strong className="text-blue-400">Supplemental Education:</strong></p>
                   <p>
-                    Quantum Learning provides <strong className="text-white">supplemental educational programs</strong> designed to enhance students' skills in public speaking, financial literacy, and innovation. Our programs are <strong className="text-white">not a substitute for formal schooling</strong> or required academic curriculum.
+                    Skillsvera provides <strong className="text-white">supplemental educational programs</strong> designed to enhance students' skills in public speaking, financial literacy, and innovation. Our programs are <strong className="text-white">not a substitute for formal schooling</strong> or required academic curriculum.
                   </p>
                 </div>
                 
@@ -257,7 +257,7 @@ export default function Disclaimer() {
                   we encourage you to schedule a consultation or contact us directly:
                 </p>
                 <div className="mt-4 space-y-2">
-                  <p><strong className="text-white">Email:</strong> <a href="mailto:thequantumlearning@gmail.com" className="text-blue-400 hover:text-blue-300">thequantumlearning@gmail.com</a></p>
+                  <p><strong className="text-white">Email:</strong> <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
                   <p><strong className="text-white">Consultation Booking:</strong> Available through our website scheduling system</p>
                 </div>
                 <p className="mt-4 text-sm text-gray-400">

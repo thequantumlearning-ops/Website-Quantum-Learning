@@ -324,7 +324,7 @@ export default function Pricing() {
               Licensed Curriculum
             </h3>
             <p className="text-gray-300 mb-4">
-              Schools and tutors gain rights to run Quantum Learning programs independently.
+              Schools and tutors gain rights to run Skillsvera programs independently.
             </p>
             <p className="text-blue-400 font-bold">Base: $500</p>
             <p className="text-yellow-400 font-bold">Premium: $899</p>

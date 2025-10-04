@@ -28,14 +28,14 @@ export default function Footer() {
       <p className="mb-2">
         Contact us at{" "}
         <a
-          href="mailto:thequantumlearning@gmail.com"
+          href="mailto:skillsvera.team@gmail.com"
           className="text-blue-400 hover:text-blue-300"
         >
-          thequantumlearning@gmail.com
+          skillsvera.team@gmail.com
         </a>
       </p>
 
-      <p>© {new Date().getFullYear()} Quantum Learning. All rights reserved.</p>
+      <p>© {new Date().getFullYear()} © 2025 Skillsvera™ | All Rights Reserved.</p>
     </footer>
   );
 }

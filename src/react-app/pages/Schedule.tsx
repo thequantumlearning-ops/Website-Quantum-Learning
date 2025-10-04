@@ -25,7 +25,7 @@ export default function Schedule() {
             Schedule Your Consultation
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Book a free consultation to learn how Quantum Learning can help unlock your child's potential 
+            Book a free consultation to learn how Skillsvera can help unlock your child's potential 
             through our innovative special skills programs.
           </p>
         </div>
@@ -107,10 +107,10 @@ export default function Schedule() {
             <p className="text-gray-400 text-sm">
               Having trouble viewing the calendar? Email us directly at{' '}
               <a 
-                href="mailto:thequantumlearning@gmail.com" 
+                href="mailto:skillsvera.team@gmail.com" 
                 className="text-blue-400 hover:text-blue-300 transition-colors"
               >
-                thequantumlearning@gmail.com
+                skillsvera.team@gmail.com
               </a>
               {' '}or call to schedule your consultation.
             </p>

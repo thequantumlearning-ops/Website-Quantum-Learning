@@ -194,10 +194,10 @@ export default function Enterprise() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Why Choose Quantum Learning
+              Why Choose Skillsvera
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Partner with us for proven methodologies, comprehensive support, and measurable results
+              Partner with us for p-roven methodologies, comprehensive support, and measurable results
             </p>
           </div>
 
@@ -334,7 +334,7 @@ export default function Enterprise() {
               Ready to Transform Education Together?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join leading educational organizations that are already using Quantum Learning
+              Join leading educational organizations that are already using Skillsvera
               to prepare students for success in the modern world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

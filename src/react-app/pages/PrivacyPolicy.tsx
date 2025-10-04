@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-white">Introduction</h2>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Quantum Learning ("we," "our," or "us") is committed to protecting the privacy and safety of children who use our educational services. 
+                Skillsvera ("we," "our," or "us") is committed to protecting the privacy and safety of children who use our educational services. 
                 This Privacy Policy explains how we collect, use, and protect information about students and their families, with special attention to 
                 compliance with the Children's Online Privacy Protection Act (COPPA) for children under 13.
               </p>
@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
                 </ul>
                 <p>
                   <strong className="text-white">Parent Rights:</strong> Parents have the right to review, update, or delete their child's information 
-                  at any time by contacting us at <a href="mailto:privacy@quantumlearning.com" className="text-blue-400 hover:text-blue-300">privacy@quantumlearning.com</a>.
+                  at any time by contacting us at <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">Skillsvera.team@gmail.com</a>.
                 </p>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function PrivacyPolicy() {
                   <li>Opt out of non-essential communications</li>
                 </ul>
                 <p className="mt-4">
-                  To exercise these rights, contact us at <a href="mailto:privacy@quantumlearning.com" className="text-blue-400 hover:text-blue-300">privacy@quantumlearning.com</a>.
+                  To exercise these rights, contact us at <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a>.
                 </p>
               </div>
             </div>
@@ -229,9 +229,9 @@ export default function PrivacyPolicy() {
                 <p>For questions about this Privacy Policy or our privacy practices, please contact:</p>
                 <div className="mt-4 space-y-2">
                   <p><strong className="text-white">Privacy Officer</strong></p>
-                  <p>Quantum Learning</p>
-                  <p>Email: <a href="mailto:privacy@quantumlearning.com" className="text-blue-400 hover:text-blue-300">privacy@quantumlearning.com</a></p>
-                  <p>General Inquiries: <a href="mailto:thequantumlearning@gmail.com" className="text-blue-400 hover:text-blue-300">thequantumlearning@gmail.com</a></p>
+                  <p>Skillsvera</p>
+                  <p>Email: <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
+                  <p>General Inquiries: <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
                 </div>
                 <p className="mt-4 text-sm text-gray-400">
                   We are committed to addressing privacy concerns promptly and will respond to inquiries within 48 hours.

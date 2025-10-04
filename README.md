@@ -1,10 +1,8 @@
-## Quantum Learning
+## Skillsvera
 
-This app was created using https://getmocha.com.
-Need help or want to join the community? Join our [Discord](https://discord.gg/shDEGBSe2d).
+Innovative special-skills education programs focused on Public Speaking, Financial Literacy, and Innovation.
 
-To run the devserver:
-```
+### Run locally
+```bash
 npm install
 npm run dev
-```

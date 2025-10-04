@@ -14,7 +14,7 @@ const Home: React.FC = () => {
       {/* ================= HERO SECTION ================= */}
       <section className="text-center mt-16 px-6 relative z-10">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-300 via-blue-500 to-blue-400 bg-clip-text text-transparent leading-normal pb-2">
-          Quantum Learning
+          Skillsvera
         </h1>
         <p className="mt-6 text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
           Innovative special skills education through Public Speaking,
@@ -156,7 +156,7 @@ const Home: React.FC = () => {
           </blockquote>
           <blockquote className="bg-gray-800 p-8 rounded-xl shadow-lg">
             <p className="text-gray-300 mb-6 leading-relaxed">
-              "Both of my children loved Quantum Learning. The classes were engaging, interactive, and made even challenging topics clear and fun. They've gained confidence, new skills, and come out of each session excited to share what they've learned."
+              "Both of my children loved Skillsvera. The classes were engaging, interactive, and made even challenging topics clear and fun. They've gained confidence, new skills, and come out of each session excited to share what they've learned."
             </p>
             <footer className="text-gray-400 font-semibold">
               — Mukul Pal, Parent

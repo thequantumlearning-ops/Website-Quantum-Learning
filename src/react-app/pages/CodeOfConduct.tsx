@@ -45,7 +45,7 @@ export default function CodeOfConduct() {
               </div>
               <div className="text-gray-300 leading-relaxed space-y-4">
                 <p>
-                  At Quantum Learning, we believe that every child deserves to learn in an environment where they feel safe, 
+                  At Skillsvera, we believe that every child deserves to learn in an environment where they feel safe, 
                   respected, and valued. This Code of Conduct outlines the expectations for behavior and interaction for all 
                   participants in our programs – students, parents, guardians, and instructors.
                 </p>
@@ -186,7 +186,7 @@ export default function CodeOfConduct() {
               </div>
               <div className="text-gray-300 leading-relaxed space-y-4">
                 <p>
-                  <strong className="text-white">Welcoming All Families:</strong> Quantum Learning welcomes students and families from all backgrounds, 
+                  <strong className="text-white">Welcoming All Families:</strong> Skillsvera welcomes students and families from all backgrounds, 
                   cultures, abilities, and family structures. We celebrate the diversity that enriches our learning community.
                 </p>
                 
@@ -310,7 +310,7 @@ export default function CodeOfConduct() {
               <div className="text-gray-300 leading-relaxed">
                 <p>For questions about this Code of Conduct or to report concerns:</p>
                 <div className="mt-4 space-y-2">
-                  <p><strong className="text-white">Program Support:</strong> <a href="mailto:thequantumlearning@gmail.com" className="text-blue-400 hover:text-blue-300">thequantumlearning@gmail.com</a></p>
+                  <p><strong className="text-white">Program Support:</strong> <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
                   <p><strong className="text-white">Urgent Concerns:</strong> Please mark your email as "URGENT" for immediate attention</p>
                 </div>
                 <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mt-4">

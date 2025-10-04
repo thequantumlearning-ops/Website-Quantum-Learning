@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <header className="bg-indigo-600 text-white shadow">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <h1 className="text-xl font-bold">Quantum Learning</h1>
+        <h1 className="text-xl font-bold">Skillsvera</h1>
         <nav className="flex gap-6 text-sm font-medium">
           <Link to="/" className="hover:text-gray-200">Home</Link>
           <Link to="/pricing" className="hover:text-gray-200">Pricing</Link>
