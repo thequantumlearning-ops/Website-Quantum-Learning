@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Calendar, User, CheckCircle } from 'lucide-react';
 
 export default function Schedule() {
@@ -8,8 +8,31 @@ export default function Schedule() {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
   }, []);
+  const popupLoadedRef = useRef(false);
+  useEffect(() => {
+    if (popupLoadedRef.current) return;
+    popupLoadedRef.current = true;
 
-  
+    const link = document.createElement('link');
+    link.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+    script.async = true;
+
+    script.onload = () => {
+      (window as any).calendar?.schedulingButton?.load({
+        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0JIYF3UZj73Dg7hZm-6Li3SyDHtlzYBA80vnQYK6ULvL2gqNnvKmtmtjftbVbzFMIh5EYigjho?gv=true',
+        color: '#039BE5',
+        label: 'Book an appointment',
+        target: document.getElementById('google-calendar-button'),
+      });
+    };
+
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div className="pt-16">
@@ -88,16 +111,20 @@ export default function Schedule() {
             </p>
           </div>
 
+          <div className="text-center my-8">
+            <div id="google-calendar-button"></div>
+          </div>
+
           <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10">
             <div className="bg-white rounded-2xl overflow-hidden">
               {/* Google Calendar Appointment Scheduling */}
-              <iframe 
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04061KRGDe35juaJ0rrO3IYHo81mdFEeTIJTVUgjjmXp4joK9Odul3MqX_4SDY6ilqZ_mxMCNQ?gv=true" 
-                style={{ border: 0 }} 
-                width="100%" 
-                height="600" 
-                frameBorder="0" 
-                scrolling="no"
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=skillsvera.team%40gmail.com&ctz=America%2FNew_York"
+                style={{ border: 0 }}
+                width="100%"
+                height="600"
+                frameBorder="0"
+                scrolling="yes"
                 className="rounded-2xl"
               ></iframe>
             </div>

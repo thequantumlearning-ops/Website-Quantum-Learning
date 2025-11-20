@@ -26,7 +26,7 @@ export default function TermsOfService() {
             </h1>
           </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            These terms outline the agreement between Quantum Learning and families using our educational services.
+            These terms outline the agreement between Skillsvera and families using our educational services.
           </p>
           <p className="text-sm text-gray-400 mt-4">Last Updated: {new Date().toLocaleDateString()}</p>
         </div>
@@ -44,7 +44,7 @@ export default function TermsOfService() {
                 <h2 className="text-2xl font-bold text-white">Acceptance of Terms</h2>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                By enrolling your child in Quantum Learning programs or using our website, you ("Parent/Guardian") agree to these Terms of Service. 
+                By enrolling your child in Skillsvera programs or using our website, you ("Parent/Guardian") agree to these Terms of Service. 
                 These terms apply to all users of our educational services, including parents, guardians, and students. If you do not agree to these terms, 
                 please do not use our services.
               </p>
@@ -58,7 +58,7 @@ export default function TermsOfService() {
               </div>
               <div className="text-gray-300 leading-relaxed space-y-4">
                 <p>
-                  Quantum Learning provides online educational programs for students in grades 2-8, focusing on:
+                  Skillsvera provides online educational programs for students in grades 2-8, focusing on:
                 </p>
                 <ul className="list-disc list-inside ml-4 space-y-2">
                   <li>Public Speaking & Communication Skills</li>
@@ -166,7 +166,7 @@ export default function TermsOfService() {
               </div>
               <div className="text-gray-300 leading-relaxed space-y-4">
                 <p>
-                  All content provided through Quantum Learning programs, including curricula, videos, worksheets, and other materials, 
+                  All content provided through Skillsvera programs, including curricula, videos, worksheets, and other materials, 
                   are protected by copyright and other intellectual property laws. This content is licensed to you for personal educational use only.
                 </p>
                 
@@ -198,7 +198,7 @@ export default function TermsOfService() {
               </div>
               <div className="text-gray-300 leading-relaxed space-y-4">
                 <p>
-                  Quantum Learning strives to provide high-quality educational services, but we cannot guarantee specific outcomes. 
+                  Skillsvera strives to provide high-quality educational services, but we cannot guarantee specific outcomes. 
                   Our liability is limited to the amount paid for services. We are not responsible for technical issues beyond our control, 
                   internet connectivity problems, or other circumstances that may affect program delivery.
                 </p>
@@ -250,7 +250,7 @@ export default function TermsOfService() {
               </div>
               <div className="text-gray-300 leading-relaxed">
                 <p>
-                  These Terms of Service are governed by the laws of the United States and the state in which Quantum Learning 
+                  These Terms of Service are governed by the laws of the United States and the state in which Skillsvera
                   is incorporated. Any disputes will be resolved through appropriate legal channels in that jurisdiction.
                 </p>
               </div>
@@ -265,9 +265,9 @@ export default function TermsOfService() {
               <div className="text-gray-300 leading-relaxed">
                 <p>If you have questions about these Terms of Service, please contact us:</p>
                 <div className="mt-4 space-y-2">
-                  <p><strong className="text-white">Quantum Learning</strong></p>
-                  <p>Email: <a href="mailto:legal@quantumlearning.com" className="text-blue-400 hover:text-blue-300">legal@quantumlearning.com</a></p>
-                  <p>General Inquiries: <a href="mailto:thequantumlearning@gmail.com" className="text-blue-400 hover:text-blue-300">thequantumlearning@gmail.com</a></p>
+                  <p><strong className="text-white">Skillsvera</strong></p>
+                  <p>Email: <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
+                  <p>General Inquiries: <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
                 </div>
                 <p className="mt-4 text-sm text-gray-400">
                   We will respond to all inquiries within 48 hours during business days.

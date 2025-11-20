@@ -148,7 +148,7 @@ const Home: React.FC = () => {
         <div className="space-y-12">
           <blockquote className="bg-gray-800 p-8 rounded-xl shadow-lg">
             <p className="text-gray-300 mb-6 leading-relaxed">
-              "Both of my children were fully engaged and excited throughout the class. The instructor made even difficult topics clear and relatable, while keeping the session interactive and fun. Quantum Learning creates an environment where learning feels both enjoyable and impactful."
+              "Both of my children were fully engaged and excited throughout the class. The instructor made even difficult topics clear and relatable, while keeping the session interactive and fun. Skillsvera creates an environment where learning feels both enjoyable and impactful."
             </p>
             <footer className="text-gray-400 font-semibold">
               — Shefali Sarangal, Parent
@@ -171,7 +171,7 @@ const Home: React.FC = () => {
           Ready to Transform Your Learning Journey?
         </h2>
         <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Join thousands of students who have discovered their potential through our innovative programs.
+          Join students who have discovered their potential through our innovative programs.
         </p>
         <div className="flex justify-center gap-6 mb-24">
           <Link

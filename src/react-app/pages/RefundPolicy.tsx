@@ -44,7 +44,7 @@ export default function RefundPolicy() {
                 <h2 className="text-2xl font-bold text-white">Policy Overview</h2>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                At Quantum Learning, we want families to be completely satisfied with our educational programs. 
+                At Skillsvera, we want families to be completely satisfied with our educational programs. 
                 This policy outlines our refund and cancellation procedures for trial classes, full programs, 
                 and various circumstances that may arise. We strive to be fair while maintaining the sustainability 
                 of our educational services.
@@ -179,7 +179,7 @@ export default function RefundPolicy() {
 
                 <p><strong className="text-white">Refund Request Process:</strong></p>
                 <ol className="list-decimal list-inside ml-4 space-y-2">
-                  <li>Submit cancellation request via email to <a href="mailto:thequantumlearning@gmail.com" className="text-blue-400 hover:text-blue-300">thequantumlearning@gmail.com</a></li>
+                  <li>Submit cancellation request via email to <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></li>
                   <li>Include student name, program details, and reason for cancellation</li>
                   <li>Receive confirmation email with refund amount and timeline</li>
                   <li>Refund processed according to policy terms</li>
@@ -244,7 +244,7 @@ export default function RefundPolicy() {
               <div className="text-gray-300 leading-relaxed">
                 <p>For all cancellations, refund requests, or questions about this policy:</p>
                 <div className="mt-4 space-y-2">
-                  <p><strong className="text-white">Email:</strong> <a href="mailto:thequantumlearning@gmail.com" className="text-blue-400 hover:text-blue-300">thequantumlearning@gmail.com</a></p>
+                  <p><strong className="text-white">Email:</strong> <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
                   <p><strong className="text-white">Subject Line:</strong> "Cancellation Request - [Student Name]" or "Refund Inquiry"</p>
                 </div>
                 <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mt-4">

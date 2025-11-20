@@ -297,8 +297,8 @@ export default function CookiePolicy() {
               <div className="text-gray-300 leading-relaxed">
                 <p>If you have questions about our use of cookies or need help managing your preferences:</p>
                 <div className="mt-4 space-y-2">
-                  <p><strong className="text-white">Email:</strong> <a href="mailto:privacy@quantumlearning.com" className="text-blue-400 hover:text-blue-300">privacy@quantumlearning.com</a></p>
-                  <p><strong className="text-white">General Inquiries:</strong> <a href="mailto:thequantumlearning@gmail.com" className="text-blue-400 hover:text-blue-300">thequantumlearning@gmail.com</a></p>
+                  <p><strong className="text-white">Email:</strong> <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
+                  <p><strong className="text-white">General Inquiries:</strong> <a href="mailto:skillsvera.team@gmail.com" className="text-blue-400 hover:text-blue-300">skillsvera.team@gmail.com</a></p>
                 </div>
                 <p className="mt-4 text-sm text-gray-400">
                   We're happy to help you understand and control your cookie preferences to ensure a comfortable browsing experience.

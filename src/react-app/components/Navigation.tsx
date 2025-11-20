@@ -24,7 +24,7 @@ export default function Navigation() {
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <img
-                src="https://mocha-cdn.com/01988d47-f944-718c-9e9d-dec488cfbafd/Qunatum-learning.png"
+                src="/skillsvera-logo.png"
                 alt="Skillsvera"
                 className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-200"
               />
