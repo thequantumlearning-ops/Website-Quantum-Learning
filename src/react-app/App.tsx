@@ -6,6 +6,7 @@ import Pricing from "./pages/Pricing";
 import Schedule from "./pages/Schedule";
 import Enterprise from "./pages/Enterprise";
 import About from "./pages/About";
+import Careers from "./pages/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/enterprise" element={<Enterprise />} />
           <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
