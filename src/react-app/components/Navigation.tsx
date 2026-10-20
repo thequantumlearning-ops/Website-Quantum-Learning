@@ -9,6 +9,7 @@ const links = [
   { href: "/enterprise", label: "For Schools" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
+  { href: "/careers", label: "Careers" },
 ];
 
 export default function Navigation() {
@@ -33,7 +34,7 @@ export default function Navigation() {
           <span className="font-display text-xl font-bold tracking-tight text-white">Skillsvera</span>
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-6 lg:gap-8 md:flex">
           {links.map((l) => (
             <NavLink key={l.href} to={l.href} className={linkClass}>
               {l.label}
