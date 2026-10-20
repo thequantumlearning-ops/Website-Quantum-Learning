@@ -4,15 +4,29 @@ import { cors } from "hono/cors";
 import { zValidator } from "@hono/zod-validator";
 import OpenAI from "openai";
 import { AppointmentSchema } from "@/shared/types";
+import ambassadors, { runMonthlyPayouts, type Env as AmbassadorEnv } from "./ambassadors";
+import { safeEqual } from "./crypto";
 
-type Env = {
+type Env = AmbassadorEnv & {
   OPENAI_API_KEY: string;
-  DB: D1Database;
 };
 
 const app = new Hono<{ Bindings: Env }>();
 
 app.use("*", cors());
+
+// Ambassador program: applications, admin actions, Stripe webhook, earnings page.
+app.route("/", ambassadors);
+
+// Appointment records contain parents' contact details, so reading or changing them needs the admin secret.
+const requireAdmin = async (c: any, next: () => Promise<void>) => {
+  const auth = c.req.header("authorization") || "";
+  const secret = c.env.ADMIN_SECRET || "";
+  if (!secret || !safeEqual(auth, `Bearer ${secret}`)) return c.json({ error: "Unauthorized" }, 401);
+  await next();
+};
+app.get("/api/appointments", requireAdmin);
+app.patch("/api/appointments/:id", requireAdmin);
 
 app.post("/api/chat", async (c) => {
   try {
@@ -146,5 +160,11 @@ app.get("/api/health", (c) => {
   return c.json({ status: "healthy", timestamp: new Date().toISOString() });
 });
 
-export default app;
+export default {
+  fetch: app.fetch,
+  // Runs on the schedule in wrangler.jsonc (the 1st of each month).
+  async scheduled(_event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
+    ctx.waitUntil(runMonthlyPayouts(env));
+  },
+};
 

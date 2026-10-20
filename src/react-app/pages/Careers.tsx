@@ -2,25 +2,10 @@ import { useState, type FormEvent } from "react";
 import { PageHeader, Button } from "../components/ui";
 import { BadgeCheck, MapPin, Clock, DollarSign, ChevronDown, ChevronUp, Check } from "lucide-react";
 
-// Applications are stored through a Google Form running behind this page.
-// Paste the form's "formResponse" URL and each question's entry ID below.
-// Until then, submissions fall back to a pre-filled email to the team.
-const GOOGLE_FORM = {
-  action: "", // e.g. "https://docs.google.com/forms/d/e/<FORM_ID>/formResponse"
-  fields: {
-    role: "", // e.g. "entry.123456789"
-    name: "",
-    email: "",
-    phone: "",
-    age: "",
-    guardianName: "",
-    guardianEmail: "",
-    location: "",
-    reach: "",
-    experience: "",
-    referral: "",
-  },
-};
+// Applications go to the site's own backend (src/worker/ambassadors.ts), which stores them,
+// emails the team an Approve button, and sends approved ambassadors their link automatically.
+// VITE_API_BASE is only needed if the backend runs on a different domain from the site.
+const API_BASE = (import.meta.env.VITE_API_BASE as string | undefined) ?? "";
 
 const TEAM_EMAIL = "skillsvera.team@gmail.com";
 const SUBMITTED_KEY = "skillsvera-careers-submitted";
@@ -114,6 +99,7 @@ type FormState = {
   reach: string;
   experience: string;
   referral: string;
+  payoutMethod: string;
   agree: boolean;
   website: string; // honeypot: real people never see or fill this
 };
@@ -131,6 +117,7 @@ const emptyForm: FormState = {
   reach: "",
   experience: "",
   referral: "",
+  payoutMethod: "",
   agree: false,
   website: "",
 };
@@ -170,7 +157,7 @@ export default function Careers() {
       if (form.name.trim().length < 2) return "Please enter your full name.";
       if (!isEmail(form.email)) return "Please enter a valid email address.";
       if (!age || age < 15 || age > 100) return "Applicants must be 15 or older.";
-      if (form.role === "Parent Ambassador" && age < 18) return "Parent Ambassadors must be 18 or older.";
+      if (form.role !== "Student Ambassador" && age < 18) return `${form.role}s must be 18 or older.`;
       if (isMinor) {
         if (form.guardianName.trim().length < 2) return "Please enter your parent or guardian's name.";
         if (!isEmail(form.guardianEmail)) return "Please enter a valid parent or guardian email.";
@@ -222,37 +209,36 @@ export default function Careers() {
     }
 
     setStatus("sending");
-    const clean = (v: string) => v.trim().slice(0, 1000);
-
-    if (GOOGLE_FORM.action) {
-      try {
-        const body = new FormData();
-        (Object.keys(GOOGLE_FORM.fields) as (keyof typeof GOOGLE_FORM.fields)[]).forEach((key) => {
-          const entry = GOOGLE_FORM.fields[key];
-          if (entry) body.append(entry, clean(String(form[key])));
-        });
-        await fetch(GOOGLE_FORM.action, { method: "POST", mode: "no-cors", body });
-      } catch {
+    try {
+      const res = await fetch(`${API_BASE}/api/ambassadors/apply`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          role: form.role,
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          age: Number(form.age),
+          guardianName: isMinor ? form.guardianName : "",
+          guardianEmail: isMinor ? form.guardianEmail : "",
+          location: form.location,
+          reach: form.reach,
+          experience: form.experience,
+          referral: form.referral,
+          payoutMethod: form.payoutMethod || undefined,
+          website: form.website,
+        }),
+      });
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
         setStatus("idle");
-        setError(`We couldn't submit your application. Please try again or email ${TEAM_EMAIL}.`);
+        setError(data.error || `We couldn't submit your application. Please try again or email ${TEAM_EMAIL}.`);
         return;
       }
-    } else {
-      const lines = [
-        `Role: ${form.role}`,
-        `Name: ${clean(form.name)}`,
-        `Email: ${clean(form.email)}`,
-        `Phone: ${clean(form.phone) || "n/a"}`,
-        `Age: ${form.age}`,
-        `Parent/guardian: ${isMinor ? `${clean(form.guardianName)} (${clean(form.guardianEmail)})` : "n/a"}`,
-        `Location: ${clean(form.location)}`,
-        `How I'd reach families: ${clean(form.reach)}`,
-        `Relevant experience: ${clean(form.experience) || "n/a"}`,
-        `Heard about us: ${clean(form.referral) || "n/a"}`,
-      ];
-      window.location.href = `mailto:${TEAM_EMAIL}?subject=${encodeURIComponent(
-        `Ambassador application: ${clean(form.name)}`
-      )}&body=${encodeURIComponent(lines.join("\n"))}`;
+    } catch {
+      setStatus("idle");
+      setError(`We couldn't reach our server. Please try again or email ${TEAM_EMAIL}.`);
+      return;
     }
 
     try {
@@ -276,6 +262,7 @@ export default function Careers() {
     ["How you'd reach families", form.reach],
     ["Relevant experience", form.experience || "Not provided"],
     ["How you heard about us", form.referral || "Not provided"],
+    ["Preferred payout", form.payoutMethod || "Not provided"],
   ];
 
   return (
@@ -381,9 +368,7 @@ export default function Careers() {
               <BadgeCheck className="w-16 h-16 text-blue-400 mx-auto mb-6" aria-hidden="true" />
               <h3 className="text-2xl font-semibold mb-3">Application submitted</h3>
               <p className="text-gray-300 leading-relaxed max-w-md mx-auto">
-                {GOOGLE_FORM.action
-                  ? "Thank you for applying. Our team will review your application and email you within 24 hours."
-                  : "Your email app should open with your application ready. Press send, and our team will reply within 24 hours."}
+                {"Thank you for applying. We've emailed you a confirmation, and our team will send a decision within 24 hours."}
               </p>
             </div>
           ) : (
@@ -503,6 +488,15 @@ export default function Careers() {
                     <div>
                       <label htmlFor="c-ref" className={labelClass}>How did you hear about us? <span className="text-gray-500 font-normal">(optional)</span></label>
                       <input id="c-ref" maxLength={200} className={inputClass} value={form.referral} onChange={(e) => update("referral", e.target.value)} />
+                    </div>
+                    <div>
+                      <label htmlFor="c-payout" className={labelClass}>How would you like to be paid? <span className="text-gray-500 font-normal">(optional)</span></label>
+                      <select id="c-payout" className={inputClass} value={form.payoutMethod} onChange={(e) => update("payoutMethod", e.target.value)}>
+                        <option value="" className="bg-ink">Choose later</option>
+                        <option value="Venmo" className="bg-ink">Venmo</option>
+                        <option value="Zelle" className="bg-ink">Zelle</option>
+                        <option value="PayPal" className="bg-ink">PayPal</option>
+                      </select>
                     </div>
                   </>
                 )}

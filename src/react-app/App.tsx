@@ -10,6 +10,7 @@ import Careers from "./pages/Careers";
 import Programs from "./pages/Programs";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import Ambassador from "./pages/Ambassador";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/enterprise" element={<Enterprise />} />
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/ambassador" element={<Ambassador />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />

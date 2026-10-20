@@ -9,7 +9,24 @@
   },
   "upload_source_maps": true,
   "assets": {
+    "directory": "./dist",
     "not_found_handling": "single-page-application",
+    // API routes always reach the backend, including links opened from emails.
+    "run_worker_first": ["/api/*"],
+  },
+  // Monthly ambassador payout summary: 9am Eastern on the 1st (13:00 UTC).
+  "triggers": {
+    "crons": ["0 13 1 * *"],
+  },
+  // Non-secret settings. Secrets (RESEND_API_KEY, STRIPE_WEBHOOK_SECRET, ADMIN_SECRET) are set in the
+  // Cloudflare dashboard or with `wrangler secret put`, never committed here.
+  "vars": {
+    "SITE_URL": "https://skillsvera.com",
+    "TEAM_EMAIL": "skillsvera.team@gmail.com",
+    "FROM_EMAIL": "Skillsvera <team@skillsvera.com>",
+    "PAYMENT_LINK_URL": "",
+    "KIT_URL": "",
+    "REFUND_WINDOW_DAYS": "14",
   },
   "d1_databases": [
     {
