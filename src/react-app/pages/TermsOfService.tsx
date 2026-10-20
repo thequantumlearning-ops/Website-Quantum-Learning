@@ -1,27 +1,16 @@
-import { useEffect } from 'react';
 import { Scale, Users, Shield, AlertCircle, FileText, Mail } from 'lucide-react';
 
 export default function TermsOfService() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-  }, []);
 
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-slate-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <Scale className="w-12 h-12 text-blue-400" />
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-400 to-blue-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight text-white">
               Terms of Service
             </h1>
           </div>
@@ -35,7 +24,7 @@ export default function TermsOfService() {
       {/* Content */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+          <div className="bg-ink-soft rounded-2xl p-8 border border-ink-line">
             
             {/* Acceptance of Terms */}
             <div className="mb-8">
@@ -257,7 +246,7 @@ export default function TermsOfService() {
             </div>
 
             {/* Contact Information */}
-            <div className="bg-gradient-to-r from-slate-600/20 to-blue-600/20 backdrop-blur-lg rounded-xl p-6 border border-slate-400/30">
+            <div className="bg-ink-soft rounded-xl p-6 border border-ink-line">
               <div className="flex items-center space-x-3 mb-4">
                 <Mail className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Questions About These Terms</h2>

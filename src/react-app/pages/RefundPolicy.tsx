@@ -1,27 +1,16 @@
-import { useEffect } from 'react';
 import { DollarSign, Calendar, Clock, AlertTriangle, CheckCircle, Mail } from 'lucide-react';
 
 export default function RefundPolicy() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-  }, []);
 
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-slate-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <DollarSign className="w-12 h-12 text-blue-400" />
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-400 to-blue-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight text-white">
               Refund & Cancellation Policy
             </h1>
           </div>
@@ -35,7 +24,7 @@ export default function RefundPolicy() {
       {/* Content */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+          <div className="bg-ink-soft rounded-2xl p-8 border border-ink-line">
             
             {/* Overview */}
             <div className="mb-8">
@@ -53,7 +42,7 @@ export default function RefundPolicy() {
 
             {/* Trial Classes */}
             <div className="mb-8">
-              <div className="bg-gradient-to-r from-blue-600/20 to-slate-600/20 backdrop-blur-lg rounded-xl p-6 border border-blue-400/30">
+              <div className="bg-ink-soft rounded-xl p-6 border border-ink-line">
                 <div className="flex items-center space-x-3 mb-4">
                   <Calendar className="w-6 h-6 text-blue-400" />
                   <h2 className="text-2xl font-bold text-white">Trial Classes</h2>
@@ -88,7 +77,7 @@ export default function RefundPolicy() {
 
             {/* 9-Week Programs */}
             <div className="mb-8">
-              <div className="bg-gradient-to-r from-slate-600/20 to-blue-600/20 backdrop-blur-lg rounded-xl p-6 border border-slate-400/30">
+              <div className="bg-ink-soft rounded-xl p-6 border border-ink-line">
                 <div className="flex items-center space-x-3 mb-4">
                   <Clock className="w-6 h-6 text-blue-400" />
                   <h2 className="text-2xl font-bold text-white">9-Week Program Cancellations</h2>
@@ -143,7 +132,7 @@ export default function RefundPolicy() {
                 <h2 className="text-2xl font-bold text-white">Individual Missed Classes</h2>
               </div>
               <div className="text-gray-300 leading-relaxed space-y-4">
-                <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                   <p><strong className="text-white">No Refunds for Individual Missed Classes:</strong></p>
                   <ul className="list-disc list-inside ml-4 mt-2 space-y-2">
                     <li>Program fees are not prorated for individual missed sessions</li>
@@ -152,7 +141,7 @@ export default function RefundPolicy() {
                   </ul>
                 </div>
 
-                <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4">
+                <div className="bg-blue-600/10 border border-ink-line rounded-lg p-4">
                   <p><strong className="text-blue-400">Makeup Support Available:</strong></p>
                   <ul className="list-disc list-inside ml-4 mt-2 space-y-2">
                     <li>Additional practice materials may be provided at our discretion</li>
@@ -204,7 +193,7 @@ export default function RefundPolicy() {
                   <li>Major changes in family circumstances affecting program participation</li>
                 </ul>
 
-                <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4 mt-4">
+                <div className="bg-blue-600/10 border border-ink-line rounded-lg p-4 mt-4">
                   <p><strong className="text-blue-400">Case-by-Case Review:</strong> These situations will be evaluated individually, 
                   and we may offer alternative solutions such as program transfers, extended access, or modified refund terms.</p>
                 </div>
@@ -236,7 +225,7 @@ export default function RefundPolicy() {
             </div>
 
             {/* Contact Information */}
-            <div className="bg-gradient-to-r from-slate-600/20 to-blue-600/20 backdrop-blur-lg rounded-xl p-6 border border-slate-400/30">
+            <div className="bg-ink-soft rounded-xl p-6 border border-ink-line">
               <div className="flex items-center space-x-3 mb-4">
                 <Mail className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Cancellation & Refund Support</h2>

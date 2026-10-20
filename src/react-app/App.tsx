@@ -7,6 +7,9 @@ import Schedule from "./pages/Schedule";
 import Enterprise from "./pages/Enterprise";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
+import Programs from "./pages/Programs";
+import FAQ from "./pages/FAQ";
+import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
@@ -20,6 +23,8 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/enterprise" element={<Enterprise />} />
@@ -31,6 +36,7 @@ export default function App() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>

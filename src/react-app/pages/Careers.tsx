@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { PageHeader, Button } from "../components/ui";
 import { BadgeCheck, MapPin, Clock, DollarSign, ChevronDown, ChevronUp, Check } from "lucide-react";
 
 // Applications are stored through a Google Form running behind this page.
@@ -137,7 +138,7 @@ const emptyForm: FormState = {
 const stepLabels = ["Role", "About you", "Your approach", "Review"];
 
 const inputClass =
-  "w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
+  "w-full rounded-lg bg-ink border border-ink-line px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
 const labelClass = "block text-sm font-semibold text-gray-200 mb-2";
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
@@ -278,63 +279,30 @@ export default function Careers() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col items-center justify-start overflow-hidden">
-      {/* ===== BACKGROUND BLOBS ===== */}
-      <div className="absolute inset-0 opacity-30 -z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-40 left-1/2 w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000"></div>
-      </div>
-
-      {/* ================= HERO SECTION ================= */}
-      <section className="text-center mt-16 px-6 relative z-10">
-        <p className="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-2">Careers at Skillsvera</p>
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-300 via-blue-500 to-blue-400 bg-clip-text text-transparent leading-normal pb-2">
-          Join Our Team
-        </h1>
-        <p className="mt-6 text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Help students build confidence, financial skills and an entrepreneurial mindset by connecting families with Skillsvera.
-        </p>
-        <div className="mt-8 flex justify-center gap-6">
-          <a href="#roles" className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
-            View Open Roles
-          </a>
-          <a href="#process" className="px-6 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300 transition">
-            Our Process
-          </a>
+    <div className="text-white">
+      <PageHeader eyebrow="Careers" title="Help more kids find their voice.">
+        Join our ambassador team and earn 20% of every enrollment you bring in. Fully remote, flexible hours, and
+        we review every application within 24 hours.
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button to="#roles" arrow>View open roles</Button>
+          <Button to="#process" variant="secondary">Our process</Button>
         </div>
-      </section>
-
-      {/* ================= STATS SECTION ================= */}
-      <section className="mt-20 flex flex-col sm:flex-row gap-10 text-center text-gray-300 relative z-10">
-        <div>
-          <h3 className="text-4xl font-bold text-white mb-2">20%</h3>
-          <p className="leading-relaxed">Commission Per Enrollment</p>
-        </div>
-        <div>
-          <h3 className="text-4xl font-bold text-white mb-2">24 hrs</h3>
-          <p className="leading-relaxed">Application Review</p>
-        </div>
-        <div>
-          <h3 className="text-4xl font-bold text-white mb-2">100%</h3>
-          <p className="leading-relaxed">Remote</p>
-        </div>
-      </section>
+      </PageHeader>
 
       {/* ================= OPEN ROLES ================= */}
-      <section id="roles" className="mt-28 px-6 max-w-5xl w-full relative z-10 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-8">Open Roles</h2>
-        <p className="text-center text-gray-300 mb-16 leading-relaxed max-w-3xl mx-auto">
+      <section id="roles" className="mx-auto mt-24 px-5 sm:px-8 max-w-6xl w-full scroll-mt-20">
+        <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Open Roles</h2>
+        <p className="mt-4 mb-12 text-lg text-gray-400">
           {roles.length} open positions · Remote · Independent contractor
         </p>
         <div className="space-y-6">
           {roles.map((role) => {
             const open = openRole === role.id;
             return (
-              <div key={role.id} className="bg-gray-800 rounded-xl shadow-lg">
+              <div key={role.id} className="bg-ink-soft border border-ink-line rounded-xl">
                 <div className="p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div>
-                    <h3 className="text-2xl font-semibold mb-3">{role.title}</h3>
+                    <h3 className="font-display text-2xl font-bold tracking-tight mb-3">{role.title}</h3>
                     <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
                       <span className="flex items-center gap-2"><MapPin className="w-4 h-4" aria-hidden="true" />Remote, United States</span>
                       <span className="flex items-center gap-2"><Clock className="w-4 h-4" aria-hidden="true" />Flexible hours</span>
@@ -348,7 +316,7 @@ export default function Careers() {
                       type="button"
                       onClick={() => setOpenRole(open ? null : role.id)}
                       aria-expanded={open}
-                      className="px-5 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300 transition flex items-center gap-2"
+                      className="px-5 py-3 border border-white/15 text-white rounded-lg font-semibold hover:bg-white/5 transition flex items-center gap-2"
                     >
                       Details {open ? <ChevronUp className="w-4 h-4" aria-hidden="true" /> : <ChevronDown className="w-4 h-4" aria-hidden="true" />}
                     </button>
@@ -362,7 +330,7 @@ export default function Careers() {
                   </div>
                 </div>
                 {open && (
-                  <div className="border-t border-gray-700 p-8 grid md:grid-cols-2 gap-10">
+                  <div className="border-t border-ink-line p-8 grid md:grid-cols-2 gap-10">
                     <div>
                       <h4 className="text-lg font-semibold mb-4">Responsibilities</h4>
                       <ul className="space-y-2 text-gray-400">
@@ -384,16 +352,16 @@ export default function Careers() {
       </section>
 
       {/* ================= PROCESS ================= */}
-      <section id="process" className="mt-28 px-6 max-w-5xl w-full relative z-10 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-8">Our Hiring Process</h2>
-        <p className="text-center text-gray-300 mb-16 leading-relaxed max-w-3xl mx-auto">
+      <section id="process" className="mx-auto mt-24 px-5 sm:px-8 max-w-6xl w-full scroll-mt-20">
+        <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Our Hiring Process</h2>
+        <p className="mt-4 mb-12 text-lg text-gray-400">
           A simple, transparent process from application to onboarding
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {steps.map((s, i) => (
-            <div key={s.title} className="bg-gray-800 p-8 rounded-xl shadow-lg">
+            <div key={s.title} className="bg-ink-soft border border-ink-line p-8 rounded-xl">
               <p className="text-blue-400 font-bold mb-2">Step {i + 1}</p>
-              <h3 className="text-2xl font-semibold mb-4">{s.title}</h3>
+              <h3 className="font-display text-2xl font-bold tracking-tight mb-3">{s.title}</h3>
               <p className="text-gray-300 leading-relaxed">{s.text}</p>
             </div>
           ))}
@@ -401,13 +369,13 @@ export default function Careers() {
       </section>
 
       {/* ================= APPLICATION ================= */}
-      <section id="apply" className="mt-28 px-6 max-w-3xl w-full relative z-10 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-8">Application</h2>
-        <p className="text-center text-gray-300 mb-12 leading-relaxed">
+      <section id="apply" className="mx-auto mt-24 px-5 sm:px-8 max-w-3xl w-full scroll-mt-20">
+        <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Application</h2>
+        <p className="mt-4 mb-12 text-lg text-gray-400">
           All fields marked required must be completed. We respond within 24 hours.
         </p>
 
-        <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+        <div className="bg-ink-soft border border-ink-line rounded-xl overflow-hidden">
           {status === "sent" ? (
             <div className="text-center p-12">
               <BadgeCheck className="w-16 h-16 text-blue-400 mx-auto mb-6" aria-hidden="true" />
@@ -451,7 +419,7 @@ export default function Careers() {
                           <label
                             key={r.id}
                             className={`flex items-start gap-4 p-5 rounded-lg border cursor-pointer transition ${
-                              selected ? "border-blue-500 bg-blue-500/10" : "border-gray-700 hover:border-gray-500"
+                              selected ? "border-blue-500 bg-blue-500/10" : "border-ink-line hover:border-gray-500"
                             }`}
                           >
                             <input
@@ -495,7 +463,7 @@ export default function Careers() {
                       </div>
                     </div>
                     {isMinor && (
-                      <div className="rounded-lg border border-gray-700 p-5 space-y-5">
+                      <div className="rounded-lg border border-ink-line p-5 space-y-5">
                         <p className="text-sm text-gray-300">Because you're under 18, we need your parent or guardian's details. We'll contact them before approving your application.</p>
                         <div className="grid sm:grid-cols-2 gap-5">
                           <div>
@@ -542,7 +510,7 @@ export default function Careers() {
                 {step === 3 && (
                   <>
                     <h3 className="text-xl font-semibold">Review your application</h3>
-                    <dl className="divide-y divide-gray-700 border border-gray-700 rounded-lg">
+                    <dl className="divide-y divide-ink-line border border-ink-line rounded-lg">
                       {review.map(([k, v]) => (
                         <div key={k} className="grid sm:grid-cols-3 gap-2 p-4">
                           <dt className="text-sm text-gray-400">{k}</dt>
@@ -561,7 +529,7 @@ export default function Careers() {
 
                 <div className="flex justify-between gap-4 pt-2">
                   {step > 0 ? (
-                    <button type="button" onClick={back} className="px-6 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300 transition">
+                    <button type="button" onClick={back} className="px-6 py-3 border border-white/15 text-white rounded-lg font-semibold hover:bg-white/5 transition">
                       Back
                     </button>
                   ) : <span />}
@@ -583,13 +551,13 @@ export default function Careers() {
       </section>
 
       {/* ================= FAQ ================= */}
-      <section className="mt-28 px-6 max-w-4xl w-full text-center relative z-10 mb-24">
-        <h2 className="text-4xl font-bold mb-12">Frequently Asked Questions</h2>
-        <div className="space-y-12">
+      <section className="mx-auto mt-28 px-5 sm:px-8 max-w-3xl w-full mb-24">
+        <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl mb-12">Frequently asked questions</h2>
+        <div className="divide-y divide-ink-line border-y border-ink-line">
           {faqs.map((faq) => (
-            <div key={faq.q} className="bg-gray-800 p-8 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">{faq.q}</h3>
-              <p className="text-gray-300 leading-relaxed">{faq.a}</p>
+            <div key={faq.q} className="py-6">
+              <h3 className="text-lg font-semibold mb-2">{faq.q}</h3>
+              <p className="text-gray-400 leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>

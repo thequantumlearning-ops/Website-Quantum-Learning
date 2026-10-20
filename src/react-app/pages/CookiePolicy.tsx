@@ -1,27 +1,16 @@
-import { useEffect } from 'react';
 import { Cookie, Settings, Eye, Shield, Info, Mail } from 'lucide-react';
 
 export default function CookiePolicy() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-  }, []);
 
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-slate-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <Cookie className="w-12 h-12 text-blue-400" />
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-400 to-blue-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight text-white">
               Cookie Policy
             </h1>
           </div>
@@ -35,7 +24,7 @@ export default function CookiePolicy() {
       {/* Content */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+          <div className="bg-ink-soft rounded-2xl p-8 border border-ink-line">
             
             {/* What Are Cookies */}
             <div className="mb-8">
@@ -49,7 +38,7 @@ export default function CookiePolicy() {
                   They help us provide you with a better experience by remembering your preferences and enabling certain website features.
                 </p>
                 
-                <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4">
+                <div className="bg-blue-600/10 border border-ink-line rounded-lg p-4">
                   <p><strong className="text-blue-400">Simple Explanation:</strong></p>
                   <p>
                     Think of cookies like a name tag that helps our website remember you when you return. They store small pieces of information 
@@ -87,7 +76,7 @@ export default function CookiePolicy() {
                   </p>
                 </div>
 
-                <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4">
+                <div className="bg-blue-600/10 border border-ink-line rounded-lg p-4">
                   <h3 className="text-xl font-semibold text-white mb-3">Analytics Cookies (Optional)</h3>
                   <p className="mb-3"><strong className="text-blue-400">Purpose:</strong> Help us understand how visitors use our website to improve the experience.</p>
                   <p><strong className="text-white">What they do:</strong></p>
@@ -102,7 +91,7 @@ export default function CookiePolicy() {
                   </p>
                 </div>
 
-                <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                   <h3 className="text-xl font-semibold text-white mb-3">Preference Cookies (Optional)</h3>
                   <p className="mb-3"><strong className="text-slate-400">Purpose:</strong> Remember your choices to provide a more personalized experience.</p>
                   <p><strong className="text-white">What they do:</strong></p>
@@ -129,7 +118,7 @@ export default function CookiePolicy() {
                 </p>
                 
                 <div className="space-y-4">
-                  <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                  <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Calendly (Scheduling)</h3>
                     <ul className="list-disc list-inside ml-4 space-y-1">
                       <li>Enables our consultation booking system</li>
@@ -138,7 +127,7 @@ export default function CookiePolicy() {
                     </ul>
                   </div>
 
-                  <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                  <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Google Fonts</h3>
                     <ul className="list-disc list-inside ml-4 space-y-1">
                       <li>Provides website typography and fonts</li>
@@ -147,7 +136,7 @@ export default function CookiePolicy() {
                     </ul>
                   </div>
 
-                  <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                  <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Video Conferencing Platforms</h3>
                     <ul className="list-disc list-inside ml-4 space-y-1">
                       <li>Used for live educational sessions (Zoom, Google Meet)</li>
@@ -172,7 +161,7 @@ export default function CookiePolicy() {
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4">
+                  <div className="bg-blue-600/10 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Browser Settings</h3>
                     <ul className="list-disc list-inside ml-4 space-y-2">
                       <li>Block all cookies (may affect functionality)</li>
@@ -210,7 +199,7 @@ export default function CookiePolicy() {
                 <p>Here's how to manage cookies in popular web browsers:</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                  <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Chrome</h3>
                     <ol className="list-decimal list-inside ml-4 space-y-1 text-sm">
                       <li>Click Settings → Privacy and Security</li>
@@ -219,7 +208,7 @@ export default function CookiePolicy() {
                     </ol>
                   </div>
                   
-                  <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                  <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Firefox</h3>
                     <ol className="list-decimal list-inside ml-4 space-y-1 text-sm">
                       <li>Click Settings → Privacy & Security</li>
@@ -228,7 +217,7 @@ export default function CookiePolicy() {
                     </ol>
                   </div>
                   
-                  <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                  <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Safari</h3>
                     <ol className="list-decimal list-inside ml-4 space-y-1 text-sm">
                       <li>Go to Safari → Preferences</li>
@@ -237,7 +226,7 @@ export default function CookiePolicy() {
                     </ol>
                   </div>
                   
-                  <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                  <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-white mb-2">Edge</h3>
                     <ol className="list-decimal list-inside ml-4 space-y-1 text-sm">
                       <li>Click Settings → Cookies and site permissions</li>
@@ -289,7 +278,7 @@ export default function CookiePolicy() {
             </div>
 
             {/* Contact Information */}
-            <div className="bg-gradient-to-r from-slate-600/20 to-blue-600/20 backdrop-blur-lg rounded-xl p-6 border border-slate-400/30">
+            <div className="bg-ink-soft rounded-xl p-6 border border-ink-line">
               <div className="flex items-center space-x-3 mb-4">
                 <Mail className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Questions About Cookies</h2>

@@ -1,125 +1,73 @@
-import { useEffect } from "react";
-import { Users, Award, Target } from "lucide-react";
+import { Container, Eyebrow, Heading, PageHeader, CtaBand } from "../components/ui";
+
+const team = [
+  {
+    name: "Krishnav",
+    role: "Founder",
+    bio: "Krishnav started Skillsvera to give students the confidence, money sense and creativity that school rarely has time for. He leads the curriculum and the overall vision.",
+  },
+  {
+    name: "Ushnish",
+    role: "Co-Founder · Financial Literacy",
+    bio: "Ushnish leads the Financial Literacy track, turning budgeting, saving and investing into hands-on lessons kids can use right away.",
+  },
+  {
+    name: "Kaustav",
+    role: "Co-Founder · Innovation & Entrepreneurship",
+    bio: "Kaustav leads the Innovation & Entrepreneurship track, teaching students to solve real problems, work in teams and pitch their ideas.",
+  },
+];
+
+const beliefs = [
+  { title: "Practice beats lectures", text: "Kids get better at speaking, budgeting and building by doing it, with feedback, in a small group." },
+  { title: "Skills should compound", text: "Our tracks revisit the same skills every year at a higher level, so nothing is learned once and forgotten." },
+  { title: "Small classes, real attention", text: "We cap every class so each student speaks, asks questions and gets noticed." },
+];
 
 export default function About() {
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-  }, []);
-
   return (
-    <div className="relative pt-20">
-      {/* Background */}
-      <div className="absolute inset-0 opacity-30 -z-0">
-        <div className="absolute top-40 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-      </div>
+    <>
+      <PageHeader eyebrow="About us" title="We teach the skills we wish we'd learned earlier.">
+        Skillsvera helps students in grades 2 to 8 become confident communicators, smart decision-makers with money and
+        creative problem-solvers.
+      </PageHeader>
 
-      {/* Hero Section */}
-      <section className="relative text-center max-w-5xl mx-auto px-6 py-20">
-        <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
-          About Skillsvera
-        </h1>
-        <p className="text-xl text-gray-300 mb-8">
-          Our mission is to empower young learners with confidence, financial
-          wisdom, and innovative thinking to thrive in the modern world.
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <span className="px-4 py-2 bg-slate-800/50 rounded-full text-gray-200">
-            Student-Centered
-          </span>
-          <span className="px-4 py-2 bg-slate-800/50 rounded-full text-gray-200">
-            Future-Ready
-          </span>
-          <span className="px-4 py-2 bg-slate-800/50 rounded-full text-gray-200">
-            Real-World Skills
-          </span>
-        </div>
+      <section className="border-b border-ink-line">
+        <Container className="grid gap-12 py-20 lg:grid-cols-3">
+          {beliefs.map((b, i) => (
+            <div key={b.title}>
+              <p className="font-display text-sm font-bold text-blue-400">0{i + 1}</p>
+              <h2 className="mt-3 font-display text-2xl font-bold tracking-tight">{b.title}</h2>
+              <p className="mt-3 leading-relaxed text-gray-300">{b.text}</p>
+            </div>
+          ))}
+        </Container>
       </section>
 
-      {/* Mission Section */}
-      <section className="max-w-6xl mx-auto px-6 py-16 text-center">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div className="bg-slate-800/50 p-8 rounded-2xl shadow-lg">
-            <Target className="h-10 w-10 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
-            <p className="text-gray-300">
-              To equip students with lifelong skills in communication,
-              financial literacy, and innovation, ensuring they are ready to
-              lead and succeed in any environment.
-            </p>
+      <section>
+        <Container className="py-20 sm:py-28">
+          <Eyebrow>The team</Eyebrow>
+          <Heading className="mt-4 max-w-2xl">The founders teach every class.</Heading>
+          <div className="mt-14 grid gap-10 md:grid-cols-3">
+            {team.map((m) => (
+              <article key={m.name}>
+                <div
+                  className="flex aspect-[4/5] w-full items-end rounded-xl border border-ink-line bg-ink-soft p-6"
+                  role="img"
+                  aria-label={`Photo of ${m.name}`}
+                >
+                  <span className="font-display text-7xl font-bold text-white/10">{m.name[0]}</span>
+                </div>
+                <h3 className="mt-5 font-display text-2xl font-bold tracking-tight">{m.name}</h3>
+                <p className="mt-1 text-sm font-semibold text-blue-400">{m.role}</p>
+                <p className="mt-3 leading-relaxed text-gray-300">{m.bio}</p>
+              </article>
+            ))}
           </div>
-          <div className="bg-slate-800/50 p-8 rounded-2xl shadow-lg">
-            <Users className="h-10 w-10 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Our Approach</h3>
-            <p className="text-gray-300">
-              We combine engaging live instruction with interactive activities,
-              fostering both critical thinking and creativity in every student.
-            </p>
-          </div>
-          <div className="bg-slate-800/50 p-8 rounded-2xl shadow-lg">
-            <Award className="h-10 w-10 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
-            <p className="text-gray-300">
-              A generation of confident, financially responsible, and
-              innovative young leaders who embrace opportunities to shape the
-              future.
-            </p>
-          </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Team Section */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">
-          Meet the Team
-        </h2>
-        <div className="grid gap-10 md:grid-cols-3">
-          {/* Krishnav */}
-          <div className="bg-slate-800/50 p-8 rounded-2xl shadow-lg text-center">
-            <h3 className="text-2xl font-semibold mb-2">Krishnav Gudepu</h3>
-            <p className="text-blue-400 mb-4">Founder and Master of Public Speaking and Communications</p>
-            <p className="text-gray-300">
-              As the Founder of Skillsvera, Krishnav lead the vision of creating
-              a platform that inspires students to become confident
-              communicators, financially literate decision-makers, and creative
-              innovators. His focus is on blending leadership, technology, and
-              education to prepare students for real-world challenges and
-              opportunities.
-            </p>
-          </div>
-
-          {/* Ushnish */}
-          <div className="bg-slate-800/50 p-8 rounded-2xl shadow-lg text-center">
-            <h3 className="text-2xl font-semibold mb-2">Ushnish Ghosh</h3>
-            <p className="text-blue-400 mb-4">Co-Founder & Financial Master</p>
-            <p className="text-gray-300">
-              Ushnish brings expertise in financial literacy and real-world
-              money management. As a Co-Founder, he ensures our programs
-              provide students with practical financial knowledge, from
-              budgeting and saving to investing, laying the foundation for
-              lifelong responsibility.
-            </p>
-          </div>
-
-          {/* Kaustav */}
-          <div className="bg-slate-800/50 p-8 rounded-2xl shadow-lg text-center">
-            <h3 className="text-2xl font-semibold mb-2">Kaustav Ghosh</h3>
-            <p className="text-blue-400 mb-4">
-              Co-Founder & Innovation Master
-            </p>
-            <p className="text-gray-300">
-              Kaustav drives the innovation and entrepreneurship track,
-              teaching students how to think creatively, solve complex
-              problems, and work collaboratively. His role as Co-Founder is to
-              inspire a new generation of young entrepreneurs and innovators.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
+      <CtaBand title="Come meet us." text="Book a free call and talk with a founder about your child's goals." />
+    </>
   );
 }
-

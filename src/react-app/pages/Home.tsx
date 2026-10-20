@@ -1,196 +1,240 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { Mic, PiggyBank, Lightbulb, Video, Users, CalendarDays, Clock } from "lucide-react";
+import { Container, Eyebrow, Heading, Button, CtaBand } from "../components/ui";
+import { SITE, formatPrice, tracks, testimonials, faqs } from "../site";
 
-const Home: React.FC = () => {
+const trackIcons = { "public-speaking": Mic, "financial-literacy": PiggyBank, entrepreneurship: Lightbulb } as const;
+
+const grades = [2, 3, 4, 5, 6, 7, 8];
+
+export default function Home() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col items-center justify-start overflow-hidden">
-      {/* ===== BACKGROUND BLOBS ===== */}
-      <div className="absolute inset-0 opacity-30 -z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-40 left-1/2 w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000"></div>
-      </div>
-
-      {/* ================= HERO SECTION ================= */}
-      <section className="text-center mt-16 px-6 relative z-10">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-300 via-blue-500 to-blue-400 bg-clip-text text-transparent leading-normal pb-2">
-          Skillsvera
-        </h1>
-        <p className="mt-6 text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Innovative special skills education through Public Speaking,
-          Financial Literacy, and Innovation programs
-        </p>
-        <div className="mt-8 flex justify-center gap-6">
-          <Link
-            to="/schedule"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
-          >
-            Schedule Consultation
-          </Link>
-          <Link
-            to="/pricing"
-            className="px-6 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300 transition"
-          >
-            View Pricing
-          </Link>
-        </div>
-      </section>
-
-      {/* ================= STATS SECTION ================= */}
-      <section className="mt-20 flex flex-col sm:flex-row gap-10 text-center text-gray-300 relative z-10">
-        <div>
-          <h3 className="text-4xl font-bold text-white mb-2">100%</h3>
-          <p className="leading-relaxed">Satisfaction Rate</p>
-        </div>
-        <div>
-          <h3 className="text-4xl font-bold text-white mb-2">3</h3>
-          <p className="leading-relaxed">Skilled Expert Instructors</p>
-        </div>
-        <div>
-          <h3 className="text-4xl font-bold text-white mb-2">24/7</h3>
-          <p className="leading-relaxed">Support Available</p>
-        </div>
-      </section>
-
-      {/* ================= CORE PROGRAMS ================= */}
-      <section className="mt-28 px-6 max-w-5xl relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-8">
-          Our Core Programs
-        </h2>
-        <p className="text-center text-gray-300 mb-16 leading-relaxed max-w-3xl mx-auto">
-          Comprehensive education designed to prepare students for success in
-          the modern world
-        </p>
-        <div className="grid md:grid-cols-3 gap-10">
-          {/* Public Speaking */}
-          <div className="bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">
-              Public Speaking & Communication
-            </h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Build confidence, clarity, and critical thinking through structured speaking practice and peer feedback.
+    <>
+      {/* Hero */}
+      <section className="border-b border-ink-line">
+        <Container className="grid items-center gap-14 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.25fr_1fr] lg:pb-28">
+          <div>
+            <Eyebrow>Live online classes · Grades {SITE.grades}</Eyebrow>
+            <Heading as="h1" className="mt-5">
+              Kids who can speak up, manage money and build ideas.
+            </Heading>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
+              Small weekend classes in public speaking, financial literacy and entrepreneurship, taught live by the
+              people who wrote the curriculum.
             </p>
-            <ul className="space-y-2 text-gray-400">
-              <li>• Presentation Skills</li>
-              <li>• Debate Practice</li>
-              <li>• Storytelling</li>
-              <li>• Public Confidence</li>
-            </ul>
-          </div>
-          {/* Financial Literacy */}
-          <div className="bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Financial Literacy</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Empowering students with age-appropriate financial knowledge for lifelong responsibility.
-            </p>
-            <ul className="space-y-2 text-gray-400">
-              <li>• Money Management</li>
-              <li>• Budgeting Basics</li>
-              <li>• Investment Fundamentals</li>
-              <li>• Smart Spending</li>
-            </ul>
-          </div>
-          {/* Innovation */}
-          <div className="bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Innovation & Entrepreneurship</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Foster creativity, teamwork, and real-world problem-solving through hands-on projects.
-            </p>
-            <ul className="space-y-2 text-gray-400">
-              <li>• Creative Thinking</li>
-              <li>• Business Planning</li>
-              <li>• Problem Solving</li>
-              <li>• Team Collaboration</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= FLEXIBLE OPTIONS ================= */}
-      <section className="mt-28 px-6 max-w-5xl relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-8">
-          Flexible Learning Options
-        </h2>
-        <div className="grid md:grid-cols-2 gap-10">
-          {/* Synchronous */}
-          <div className="bg-gray-800 p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Synchronous Classes</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Live, interactive sessions with real-time feedback and peer collaboration through Zoom/Google Meet.
-            </p>
-            <ul className="space-y-2 text-gray-400">
-              <li>• Live instructor interaction</li>
-              <li>• Real-time peer feedback</li>
-              <li>• Group activities & discussions</li>
-            </ul>
-          </div>
-          {/* Asynchronous */}
-          <div className="bg-gray-800 p-8 rounded-xl shadow-lg relative">
-            <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded animate-pulse">
-              Coming Soon!
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Button to={SITE.enrollUrl} arrow>
+                Enroll for {formatPrice(SITE.price)}
+              </Button>
+              <Button to="/schedule" variant="secondary">
+                Book a free call
+              </Button>
             </div>
-            <h3 className="text-2xl font-semibold mb-4">Asynchronous Learning</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Self-paced learning with pre-recorded lessons and flexible scheduling for busy families.
+          </div>
+
+          <div className="rounded-xl border border-ink-line bg-ink-soft p-7 sm:p-8">
+            <p className="text-sm font-semibold text-gray-400">Every course</p>
+            <p className="mt-2 font-display text-5xl font-bold tracking-tight">
+              {formatPrice(SITE.price)}
+              <span className="ml-2 font-sans text-base font-medium text-gray-400">all-inclusive</span>
             </p>
-            <ul className="space-y-2 text-gray-400">
-              <li>• Learn at your own pace</li>
-              <li>• 24/7 access to materials</li>
-              <li>• Weekly instructor check-ins</li>
+            <ul className="mt-7 divide-y divide-ink-line border-t border-ink-line">
+              {[
+                { icon: CalendarDays, text: `${SITE.classesPerCourse} live classes over ${SITE.weeksPerCourse} weekends` },
+                { icon: Clock, text: `${SITE.classLengthMinutes} minutes per class` },
+                { icon: Users, text: `Never more than ${SITE.maxClassSize} students` },
+                { icon: Video, text: "On Zoom, with recordings if you miss one" },
+              ].map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-center gap-3 py-3.5 text-[15px] text-gray-200">
+                  <Icon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
+                  {text}
+                </li>
+              ))}
             </ul>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* ================= TESTIMONIALS ================= */}
-      <section className="mt-28 px-6 max-w-4xl text-center relative z-10">
-        <h2 className="text-4xl font-bold mb-12">What Our Families Say</h2>
-        <div className="space-y-12">
-          <blockquote className="bg-gray-800 p-8 rounded-xl shadow-lg">
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              "Both of my children were fully engaged and excited throughout the class. The instructor made even difficult topics clear and relatable, while keeping the session interactive and fun. Skillsvera creates an environment where learning feels both enjoyable and impactful."
-            </p>
-            <footer className="text-gray-400 font-semibold">
-              — Shefali Sarangal, Parent
-            </footer>
-          </blockquote>
-          <blockquote className="bg-gray-800 p-8 rounded-xl shadow-lg">
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              "Both of my children loved Skillsvera. The classes were engaging, interactive, and made even challenging topics clear and fun. They've gained confidence, new skills, and come out of each session excited to share what they've learned."
-            </p>
-            <footer className="text-gray-400 font-semibold">
-              — Mukul Pal, Parent
-            </footer>
-          </blockquote>
-        </div>
+      {/* Tracks */}
+      <section>
+        <Container className="py-20 sm:py-28">
+          <div className="max-w-2xl">
+            <Eyebrow>Three tracks</Eyebrow>
+            <Heading className="mt-4">The skills school doesn't have time to teach.</Heading>
+          </div>
+          <div className="mt-14 divide-y divide-ink-line border-y border-ink-line">
+            {tracks.map((t) => {
+              const Icon = trackIcons[t.id as keyof typeof trackIcons];
+              return (
+                <div key={t.id} className="grid gap-6 py-10 md:grid-cols-[1fr_1.2fr_1fr] md:gap-10">
+                  <div className="flex items-start gap-4">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blue-600/15 text-blue-400">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <h3 className="font-display text-2xl font-bold tracking-tight">{t.name}</h3>
+                      <p className="mt-1 text-gray-400">{t.short}</p>
+                    </div>
+                  </div>
+                  <p className="leading-relaxed text-gray-300">{t.description}</p>
+                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-[15px] text-gray-400 md:grid-cols-1">
+                    {t.skills.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-10">
+            <Link to="/programs" className="font-semibold text-blue-400 hover:text-blue-300">
+              Explore the programs →
+            </Link>
+          </div>
+        </Container>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
-      <section className="mt-28 text-center px-6 relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-24">
-          Ready to Transform Your Learning Journey?
-        </h2>
-        <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Join students who have discovered their potential through our innovative programs.
-        </p>
-        <div className="flex justify-center gap-6 mb-24">
-          <Link
-            to="/schedule"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
-          >
-            Get Started Today
-          </Link>
-          <Link
-            to="/about"
-            className="px-6 py-3 bg-gray-200 text-gray-900 rounded-lg font-semibold hover:bg-gray-300 transition"
-          >
-            Learn More About Us
-          </Link>
-        </div>
+      {/* How a course works */}
+      <section className="bg-white text-gray-900">
+        <Container className="py-20 sm:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+            <div>
+              <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-blue-600">How a course works</p>
+              <Heading className="mt-4">Four weekends. One real result.</Heading>
+              <p className="mt-5 text-lg leading-relaxed text-gray-600">
+                Every course follows the same arc: learn the idea, practice it live with feedback, then finish with a
+                project your child is proud to show.
+              </p>
+            </div>
+            <ol className="grid gap-px overflow-hidden rounded-xl border border-gray-200 bg-gray-200 sm:grid-cols-2">
+              {[
+                { when: "Week 1", title: "Learn", text: "Core ideas, explained with examples kids actually care about." },
+                { when: "Week 2", title: "Practice", text: "Short live exercises in small groups, with feedback from the instructor." },
+                { when: "Week 3", title: "Build", text: "Each student develops their own talk, budget or business idea." },
+                { when: "Week 4", title: "Present", text: "Students share their work and get specific, encouraging feedback." },
+              ].map((s) => (
+                <li key={s.when} className="bg-white p-7">
+                  <p className="text-sm font-semibold text-blue-600">{s.when}</p>
+                  <h3 className="mt-2 font-display text-2xl font-bold tracking-tight">{s.title}</h3>
+                  <p className="mt-2 leading-relaxed text-gray-600">{s.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </Container>
       </section>
-    </div>
+
+      {/* Curriculum map */}
+      <section className="border-b border-ink-line">
+        <Container className="py-20 sm:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:items-center">
+            <div>
+              <Eyebrow>The curriculum</Eyebrow>
+              <Heading className="mt-4">
+                {SITE.courseCount} courses. One path from 2nd to 8th grade.
+              </Heading>
+              <p className="mt-5 text-lg leading-relaxed text-gray-300">
+                Each track comes back to the same skills at a higher level every year, so your child keeps growing
+                instead of starting over. Join at any grade and pick up where you fit.
+              </p>
+            </div>
+            <figure className="rounded-xl border border-ink-line bg-ink-soft p-6 sm:p-8">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[480px] border-separate border-spacing-y-3 text-left">
+                  <caption className="sr-only">Tracks available by grade</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" className="w-40 pb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                        Grade
+                      </th>
+                      {grades.map((g) => (
+                        <th key={g} scope="col" className="pb-2 text-center text-sm font-semibold text-gray-400">
+                          {g}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tracks.map((t) => (
+                      <tr key={t.id}>
+                        <th scope="row" className="pr-4 text-[15px] font-medium text-gray-200">
+                          {t.name.replace("Innovation & ", "")}
+                        </th>
+                        {grades.map((g, i) => (
+                          <td key={g} className="px-0.5">
+                            <div
+                              className="h-2.5 rounded-full bg-blue-500"
+                              style={{ opacity: 0.35 + (i / (grades.length - 1)) * 0.65 }}
+                              aria-hidden="true"
+                            ></div>
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <figcaption className="mt-4 text-sm text-gray-500">
+                Every track runs through every grade, getting deeper each year.
+              </figcaption>
+            </figure>
+          </div>
+        </Container>
+      </section>
+
+      {/* Testimonials */}
+      <section>
+        <Container className="py-20 sm:py-28">
+          <Eyebrow>From parents</Eyebrow>
+          <div className="mt-8 grid gap-12 md:grid-cols-2">
+            {testimonials.map((t) => (
+              <figure key={t.name}>
+                <blockquote className="font-display text-2xl font-semibold leading-snug tracking-tight text-white sm:text-[1.7rem]">
+                  “{t.quote}”
+                </blockquote>
+                <figcaption className="mt-6 text-[15px] text-gray-400">
+                  <span className="font-semibold text-gray-200">{t.name}</span> · {t.role}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Founders + FAQ */}
+      <section className="border-t border-ink-line">
+        <Container className="grid gap-16 py-20 sm:py-28 lg:grid-cols-2">
+          <div>
+            <Eyebrow>Who teaches</Eyebrow>
+            <Heading className="mt-4">Taught by the founders. Every class.</Heading>
+            <p className="mt-5 text-lg leading-relaxed text-gray-300">
+              Krishnav, Ushnish and Kaustav built Skillsvera and teach every session themselves. No outsourced tutors,
+              no prerecorded lectures.
+            </p>
+            <div className="mt-8">
+              <Button to="/about" variant="secondary" arrow>
+                Meet the team
+              </Button>
+            </div>
+          </div>
+          <div>
+            <h2 className="font-display text-2xl font-bold tracking-tight">Common questions</h2>
+            <dl className="mt-6 divide-y divide-ink-line border-y border-ink-line">
+              {faqs.slice(1, 5).map((f) => (
+                <div key={f.q} className="py-5">
+                  <dt className="font-semibold text-white">{f.q}</dt>
+                  <dd className="mt-2 leading-relaxed text-gray-400">{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+            <Link to="/faq" className="mt-6 inline-block font-semibold text-blue-400 hover:text-blue-300">
+              All questions →
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      <CtaBand />
+    </>
   );
-};
-
-export default Home;
-
+}

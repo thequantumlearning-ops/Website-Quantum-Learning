@@ -1,27 +1,16 @@
-import { useEffect } from 'react';
 import { AlertTriangle, BookOpen, TrendingUp, Users, Info, Mail } from 'lucide-react';
 
 export default function Disclaimer() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-  }, []);
 
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-slate-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <AlertTriangle className="w-12 h-12 text-blue-400" />
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-400 to-blue-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight text-white">
               Disclaimer
             </h1>
           </div>
@@ -35,7 +24,7 @@ export default function Disclaimer() {
       {/* Content */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+          <div className="bg-ink-soft rounded-2xl p-8 border border-ink-line">
             
             {/* Educational Nature */}
             <div className="mb-8">
@@ -44,7 +33,7 @@ export default function Disclaimer() {
                 <h2 className="text-2xl font-bold text-white">Educational Service Nature</h2>
               </div>
               <div className="text-gray-300 leading-relaxed space-y-4">
-                <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4">
+                <div className="bg-blue-600/10 border border-ink-line rounded-lg p-4">
                   <p><strong className="text-blue-400">Supplemental Education:</strong></p>
                   <p>
                     Skillsvera provides <strong className="text-white">supplemental educational programs</strong> designed to enhance students' skills in public speaking, financial literacy, and innovation. Our programs are <strong className="text-white">not a substitute for formal schooling</strong> or required academic curriculum.
@@ -116,7 +105,7 @@ export default function Disclaimer() {
                   with content and activities appropriate for typical developmental stages within this range.
                 </p>
                 
-                <div className="bg-slate-600/20 border border-slate-400/30 rounded-lg p-4">
+                <div className="bg-slate-600/20 border border-ink-line rounded-lg p-4">
                   <p><strong className="text-white">Developmental Considerations:</strong></p>
                   <ul className="list-disc list-inside ml-4 mt-2 space-y-2">
                     <li>Some concepts may be challenging for younger students and may require additional parental support</li>
@@ -182,7 +171,7 @@ export default function Disclaimer() {
                   <li>Understanding of child development and learning differences</li>
                 </ul>
                 
-                <div className="bg-blue-600/10 border border-blue-400/30 rounded-lg p-4">
+                <div className="bg-blue-600/10 border border-ink-line rounded-lg p-4">
                   <p><strong className="text-blue-400">Not Licensed Professionals:</strong> Unless specifically stated, our instructors are not licensed teachers, therapists, or financial advisors. Our programs provide general education and skill development, not professional advice or therapeutic intervention.</p>
                 </div>
               </div>
@@ -246,7 +235,7 @@ export default function Disclaimer() {
             </div>
 
             {/* Contact Information */}
-            <div className="bg-gradient-to-r from-slate-600/20 to-blue-600/20 backdrop-blur-lg rounded-xl p-6 border border-slate-400/30">
+            <div className="bg-ink-soft rounded-xl p-6 border border-ink-line">
               <div className="flex items-center space-x-3 mb-4">
                 <Mail className="w-6 h-6 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Questions About Our Programs</h2>

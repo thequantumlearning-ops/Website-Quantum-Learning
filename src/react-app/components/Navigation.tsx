@@ -1,90 +1,83 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+
+const links = [
+  { href: "/programs", label: "Programs" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+  { href: "/enterprise", label: "For Schools" },
+  { href: "/faq", label: "FAQ" },
+];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/enterprise", label: "Enterprise" },
-    { href: "/schedule", label: "Schedule Consultation" },
-  ];
+  useEffect(() => setIsOpen(false), [location.pathname]);
 
-  const isActive = (href: string) => location.pathname === href;
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `text-[15px] font-medium transition-colors ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <img
-                src="/skillsvera-logo.png"
-                alt="Skillsvera"
-                className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-200"
-              />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-slate-400 to-blue-500 bg-clip-text text-transparent">
-              Skillsvera
-            </span>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-line bg-ink/90 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+        <Link to="/" className="flex items-center gap-2.5" aria-label="Skillsvera home">
+          <img src="/skillsvera-logo.png" alt="" className="h-8 w-8 rounded object-contain" />
+          <span className="font-display text-xl font-bold tracking-tight text-white">Skillsvera</span>
+        </Link>
+
+        <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
+          {links.map((l) => (
+            <NavLink key={l.href} to={l.href} className={linkClass}>
+              {l.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="hidden md:block">
+          <Link
+            to="/schedule"
+            className="inline-flex h-10 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white transition hover:bg-blue-500"
+          >
+            Book a free call
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link.href)
-                    ? "text-blue-500"
-                    : "text-gray-300 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/40 backdrop-blur-xl rounded-lg mt-2">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`block px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
-                    isActive(link.href)
-                      ? "text-blue-500 bg-blue-500/10"
-                      : "text-gray-300 hover:text-white hover:bg-white/5"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+        <button
+          type="button"
+          onClick={() => setIsOpen((o) => !o)}
+          className="-mr-2 flex h-11 w-11 items-center justify-center text-gray-300 hover:text-white md:hidden"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
-    </nav>
+
+      {isOpen && (
+        <nav aria-label="Mobile" className="border-t border-ink-line bg-ink md:hidden">
+          <div className="flex flex-col px-5 py-4">
+            {links.map((l) => (
+              <NavLink
+                key={l.href}
+                to={l.href}
+                className={({ isActive }) =>
+                  `py-3 text-base font-medium ${isActive ? "text-white" : "text-gray-300"}`
+                }
+              >
+                {l.label}
+              </NavLink>
+            ))}
+            <Link
+              to="/schedule"
+              className="mt-3 inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 font-semibold text-white"
+            >
+              Book a free call
+            </Link>
+          </div>
+        </nav>
+      )}
+    </header>
   );
 }
-
