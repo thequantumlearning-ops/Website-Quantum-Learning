@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
+import { Check, Mic, PiggyBank, Lightbulb } from "lucide-react";
 import { Container, Eyebrow, Heading, Button, PageHeader, CtaBand } from "../components/ui";
 import { SITE, formatPrice, tracks } from "../site";
+import { enrollHref } from "../referral";
+
+const icons = { "public-speaking": Mic, "financial-literacy": PiggyBank, entrepreneurship: Lightbulb } as const;
 
 const included = [
   `${SITE.classesPerCourse} live classes, ${SITE.classLengthMinutes} minutes each`,
@@ -36,8 +39,8 @@ export default function Pricing() {
               {SITE.classesPerCourse} classes over {SITE.weeksPerCourse} weeks · about {formatPrice(Math.round(SITE.price / SITE.classesPerCourse))} per class
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button to={SITE.enrollUrl} arrow className="flex-1">
-                Enroll now
+              <Button to="#courses" arrow className="flex-1">
+                Choose a course
               </Button>
               <Button to="/schedule" variant="secondary" className="flex-1">
                 Book a free call
@@ -62,6 +65,33 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
+          </div>
+        </Container>
+      </section>
+
+      <section id="courses" className="scroll-mt-32 border-b border-ink-line bg-ink-soft">
+        <Container className="py-20">
+          <Eyebrow>Courses</Eyebrow>
+          <Heading className="mt-4">Pick a track to enroll.</Heading>
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {tracks.map((t) => {
+              const Icon = icons[t.id as keyof typeof icons];
+              return (
+                <article key={t.id} className="flex flex-col rounded-2xl border border-ink-line bg-ink p-7 shadow-soft">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/15 text-blue-300">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-5 font-display text-xl font-bold tracking-tightish">{t.name}</h3>
+                  <p className="mt-3 flex-1 leading-[1.6] text-gray-400">{t.description}</p>
+                  <div className="mt-6 flex items-center justify-between gap-4 border-t border-ink-line pt-5">
+                    <p className="font-display text-2xl font-bold tracking-tightish">{formatPrice(SITE.price)}</p>
+                    <Button to={enrollHref(t.id)} className="min-h-[44px] px-5">
+                      Enroll
+                    </Button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </Container>
       </section>

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Container, Eyebrow, Heading, Button, CtaBand } from "../components/ui";
 import { SITE, formatPrice, tracks, levels, comparison, testimonials } from "../site";
+import { enrollHref } from "../referral";
 
 const trackIcons = { "public-speaking": Mic, "financial-literacy": PiggyBank, entrepreneurship: Lightbulb } as const;
 
@@ -158,7 +159,7 @@ export default function Home() {
                     {SITE.classesPerCourse} classes · {SITE.weeksPerCourse} weeks
                   </p>
                 </div>
-                <Button to={SITE.enrollUrl} className="min-h-[44px] px-5">
+                <Button to={enrollHref(heroTrack.id)} className="min-h-[44px] px-5">
                   Enroll
                 </Button>
               </div>

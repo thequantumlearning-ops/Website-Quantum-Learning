@@ -24,7 +24,6 @@
     "SITE_URL": "https://skillsvera.com",
     "TEAM_EMAIL": "skillsvera.team@gmail.com",
     "FROM_EMAIL": "Skillsvera <team@skillsvera.com>",
-    "PAYMENT_LINK_URL": "",
     "KIT_URL": "",
     "REFUND_WINDOW_DAYS": "14",
   },

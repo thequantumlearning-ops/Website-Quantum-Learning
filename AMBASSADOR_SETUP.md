@@ -32,9 +32,11 @@ and Stripe (standard card fees only, which you pay already).
 
 ## 4. Stripe
 
-1. **Product catalog → Add product**: "Skillsvera Course", $125, one-time.
-2. **Payment Links → New** for that product. Under custom fields add a text field labeled
-   **Who referred you?** and mark it optional. Copy the link.
+1. **Product catalog → Add product** three times, one per course (Public Speaking, Financial Literacy,
+   Innovation & Entrepreneurship), each $125, one-time.
+2. **Payment Links → New** for each product. Add custom text fields **Student name**, **Grade**, and
+   **Who referred you?** (mark that one optional). Copy all three links and send them to Claude, or paste
+   them into `paymentLinks` in `src/react-app/site.ts`.
 3. **Developers → Webhooks → Add endpoint**: `https://skillsvera.com/api/stripe/webhook`.
    Select the events `checkout.session.completed`, `checkout.session.async_payment_succeeded` and
    `charge.refunded`. Copy the **Signing secret** (starts with `whsec_`).
@@ -55,7 +57,6 @@ Add these as plain **Text** variables:
 
 | Name | Value |
 | --- | --- |
-| `PAYMENT_LINK_URL` | The Stripe Payment Link from step 4 |
 | `KIT_URL` | Link to the ambassador starter kit (optional) |
 
 Never paste secrets into chat, email or the code.
@@ -64,8 +65,8 @@ Never paste secrets into chat, email or the code.
 
 1. Apply on `/careers` using your own email.
 2. You get an email with **Approve**. Tap it, then confirm.
-3. You get a welcome email with your personal link. Open it and pay with a Stripe test card, or a real
-   $125 payment you refund afterwards.
+3. You get a welcome email with your personal link (`skillsvera.com/?ref=YOURCODE`). Open it, click Enroll
+   on any course and pay, then refund yourself in Stripe afterwards.
 4. Within seconds you get "You earned $25.00", and your earnings page shows the sale.
 
 ## How it runs day to day

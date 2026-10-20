@@ -1,6 +1,7 @@
 import { Mic, PiggyBank, Lightbulb, Check } from "lucide-react";
 import { Container, Eyebrow, Heading, Button, PageHeader, CtaBand } from "../components/ui";
 import { SITE, formatPrice, tracks } from "../site";
+import { enrollHref } from "../referral";
 
 const icons = { "public-speaking": Mic, "financial-literacy": PiggyBank, entrepreneurship: Lightbulb } as const;
 
@@ -43,7 +44,7 @@ export default function Programs() {
                 <p className="mt-2 text-lg text-blue-300">{t.short}</p>
                 <p className="mt-6 text-lg leading-relaxed text-gray-300">{t.description}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Button to={SITE.enrollUrl} arrow>
+                  <Button to={enrollHref(t.id)} arrow>
                     Enroll in {t.name.split(" ")[0] === "Innovation" ? "Entrepreneurship" : t.name}
                   </Button>
                 </div>

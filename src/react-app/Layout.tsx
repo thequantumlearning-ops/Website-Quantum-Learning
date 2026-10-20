@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import { captureReferral } from "./referral";
 
 function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, search } = useLocation();
+  useEffect(() => captureReferral(search), [search]);
   useEffect(() => {
     if (hash) {
       const el = document.getElementById(hash.slice(1));

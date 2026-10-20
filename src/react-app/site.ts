@@ -9,8 +9,14 @@ export const SITE = {
   maxClassSize: 15,
   grades: "2–8",
   courseCount: 21,
-  // Replace with your Stripe Payment Link when it's ready.
-  enrollUrl: "/schedule",
+  // General "Enroll" buttons send parents to the course list on the pricing page.
+  enrollUrl: "/pricing#courses",
+  // Paste each course's Stripe Payment Link here. Until a link is set, its Enroll button opens the booking page.
+  paymentLinks: {
+    "public-speaking": "",
+    "financial-literacy": "",
+    entrepreneurship: "",
+  } as Record<string, string>,
   // The bar at the very top of every page. Add your next start date when it's set.
   announcement: "Now enrolling weekend classes for grades 2–8 · Max 15 students per class",
   announcementShort: "Now enrolling · Max 15 per class",

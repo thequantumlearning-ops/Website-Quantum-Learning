@@ -9,7 +9,6 @@ export type Env = {
   RESEND_API_KEY?: string;
   STRIPE_WEBHOOK_SECRET?: string;
   ADMIN_SECRET?: string;
-  PAYMENT_LINK_URL?: string;
   SITE_URL?: string;
   TEAM_EMAIL?: string;
   FROM_EMAIL?: string;
@@ -27,10 +26,10 @@ const siteUrl = (env: Env) => (env.SITE_URL || "https://skillsvera.com").replace
 const teamEmail = (env: Env) => env.TEAM_EMAIL || "skillsvera.team@gmail.com";
 const refundDays = (env: Env) => Math.max(0, Number(env.REFUND_WINDOW_DAYS ?? 14) || 14);
 
+// Ambassadors share a link to the website. The site remembers the code and attaches it to whichever
+// course's Stripe checkout the parent opens, so one link works for all three courses.
 export function referralLink(env: Env, code: string) {
-  const base = env.PAYMENT_LINK_URL || `${siteUrl(env)}/pricing`;
-  const sep = base.includes("?") ? "&" : "?";
-  return `${base}${sep}client_reference_id=${encodeURIComponent(code)}`;
+  return `${siteUrl(env)}/?ref=${encodeURIComponent(code)}`;
 }
 
 async function actionUrl(env: Env, action: string, id: number) {
