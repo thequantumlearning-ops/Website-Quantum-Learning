@@ -29,7 +29,7 @@ export default function Layout() {
         Skip to content
       </a>
       <Navigation />
-      <main id="main" className="flex-grow pt-16">
+      <main id="main" className="flex-grow pt-[105px]">
         <Outlet />
       </main>
       <Footer />

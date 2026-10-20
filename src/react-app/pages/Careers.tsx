@@ -290,7 +290,7 @@ export default function Careers() {
       </PageHeader>
 
       {/* ================= OPEN ROLES ================= */}
-      <section id="roles" className="mx-auto mt-24 px-5 sm:px-8 max-w-6xl w-full scroll-mt-20">
+      <section id="roles" className="mx-auto mt-24 px-5 sm:px-8 max-w-6xl w-full scroll-mt-32">
         <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Open Roles</h2>
         <p className="mt-4 mb-12 text-lg text-gray-400">
           {roles.length} open positions · Remote · Independent contractor
@@ -352,7 +352,7 @@ export default function Careers() {
       </section>
 
       {/* ================= PROCESS ================= */}
-      <section id="process" className="mx-auto mt-24 px-5 sm:px-8 max-w-6xl w-full scroll-mt-20">
+      <section id="process" className="mx-auto mt-24 px-5 sm:px-8 max-w-6xl w-full scroll-mt-32">
         <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Our Hiring Process</h2>
         <p className="mt-4 mb-12 text-lg text-gray-400">
           A simple, transparent process from application to onboarding
@@ -369,7 +369,7 @@ export default function Careers() {
       </section>
 
       {/* ================= APPLICATION ================= */}
-      <section id="apply" className="mx-auto mt-24 px-5 sm:px-8 max-w-3xl w-full scroll-mt-20">
+      <section id="apply" className="mx-auto mt-24 px-5 sm:px-8 max-w-3xl w-full scroll-mt-32">
         <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Application</h2>
         <p className="mt-4 mb-12 text-lg text-gray-400">
           All fields marked required must be completed. We respond within 24 hours.

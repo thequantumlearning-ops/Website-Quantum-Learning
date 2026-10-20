@@ -43,7 +43,11 @@ export default function Pricing() {
                 Book a free call
               </Button>
             </div>
-            <p className="mt-6 text-sm text-gray-500">
+            <p className="mt-6 text-sm text-gray-400">
+              Running a school or program? See{" "}
+              <Link to="/enterprise" className="text-blue-400 hover:text-blue-300">curriculum licensing</Link>.
+            </p>
+            <p className="mt-2 text-sm text-gray-500">
               Available for {tracks.map((t) => t.name).join(", ").replace(/, ([^,]*)$/, " and $1")}.
             </p>
           </div>

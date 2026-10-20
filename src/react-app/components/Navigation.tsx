@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { SITE } from "../site";
 
 const links = [
   { href: "/programs", label: "Programs" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
   { href: "/enterprise", label: "For Schools" },
+  { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -20,7 +21,12 @@ export default function Navigation() {
     `text-[15px] font-medium transition-colors ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-line bg-ink/90 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-line bg-ink/95 backdrop-blur">
+      <div className="flex h-10 items-center justify-center border-b border-ink-line bg-ink-soft px-4 text-center text-[13px] font-medium text-gray-300">
+        <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400" aria-hidden="true"></span>
+        <span className="hidden sm:inline">{SITE.announcement}</span>
+        <span className="sm:hidden">{SITE.announcementShort}</span>
+      </div>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="Skillsvera home">
           <img src="/skillsvera-logo.png" alt="" className="h-8 w-8 rounded object-contain" />
@@ -40,7 +46,7 @@ export default function Navigation() {
             to="/schedule"
             className="inline-flex h-10 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white transition hover:bg-blue-500"
           >
-            Book a free call
+            Free consultation
           </Link>
         </div>
 
@@ -73,7 +79,7 @@ export default function Navigation() {
               to="/schedule"
               className="mt-3 inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 font-semibold text-white"
             >
-              Book a free call
+              Schedule a free consultation
             </Link>
           </div>
         </nav>

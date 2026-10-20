@@ -8,7 +8,7 @@ export function Container({ children, className = "" }: { children: ReactNode; c
 
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <p className={`text-[13px] font-semibold uppercase tracking-[0.14em] text-blue-400 ${className}`}>{children}</p>
+    <p className={`text-[13px] font-semibold uppercase tracking-[0.16em] text-gray-400 ${className}`}>{children}</p>
   );
 }
 
@@ -23,11 +23,11 @@ export function Heading({
 }) {
   const size =
     Tag === "h1"
-      ? "text-[2.6rem] leading-[1.05] sm:text-6xl sm:leading-[1.02]"
+      ? "text-[2.6rem] leading-[1.08] sm:text-[3.5rem] lg:text-[4rem] lg:leading-[1.05]"
       : Tag === "h2"
-        ? "text-3xl leading-tight sm:text-5xl sm:leading-[1.05]"
+        ? "text-[2rem] leading-tight sm:text-[2.75rem] sm:leading-[1.1]"
         : "text-xl leading-snug sm:text-2xl";
-  return <Tag className={`font-display font-bold tracking-tight ${size} ${className}`}>{children}</Tag>;
+  return <Tag className={`font-display font-bold tracking-tightish ${size} ${className}`}>{children}</Tag>;
 }
 
 type ButtonProps = {
@@ -88,14 +88,14 @@ export function PageHeader({
         <Heading as="h1" className="mt-4 max-w-3xl">
           {title}
         </Heading>
-        {children && <div className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">{children}</div>}
+        {children && <div className="mt-6 max-w-2xl text-lg leading-[1.6] text-gray-300">{children}</div>}
       </Container>
     </section>
   );
 }
 
 export function CtaBand({
-  title = "Ready when you are.",
+  title = "Give your child the skills school doesn't teach.",
   text = "Book a free consultation. We'll answer your questions and help you pick the right first course.",
 }: {
   title?: string;
@@ -110,7 +110,7 @@ export function CtaBand({
         </div>
         <div className="flex flex-wrap gap-3">
           <Button to="/schedule" variant="light">
-            Book a free call
+            Schedule a free consultation
           </Button>
           <Button to="/pricing" variant="secondary" className="border-white/40 hover:bg-white/10">
             See pricing

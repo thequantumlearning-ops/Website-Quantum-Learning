@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #0A0D14; color: #fff; -webkit-font-smoothing: antialiased; }
+body {
+  margin: 0;
+  background: #0F1422;
+  color: #EEF1F6;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 ::selection { background: #2563eb; color: #fff; }

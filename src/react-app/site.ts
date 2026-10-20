@@ -11,6 +11,9 @@ export const SITE = {
   courseCount: 21,
   // Replace with your Stripe Payment Link when it's ready.
   enrollUrl: "/schedule",
+  // The bar at the very top of every page. Add your next start date when it's set.
+  announcement: "Now enrolling weekend classes for grades 2–8 · Max 15 students per class",
+  announcementShort: "Now enrolling · Max 15 per class",
 };
 
 export const formatPrice = (n: number) => `$${n}`;
@@ -40,6 +43,32 @@ export const tracks = [
       "Kids spot problems worth solving, design a product, price it and pitch it. They learn to work in a team and take feedback well.",
     skills: ["Finding a problem", "Designing a solution", "Pricing and planning", "Pitching to an audience"],
   },
+];
+
+export const levels: Record<string, { grades: string; focus: string }[]> = {
+  "public-speaking": [
+    { grades: "Grades 2–3", focus: "Speaking clearly and loudly enough, short show-and-tell talks, listening to others" },
+    { grades: "Grades 4–5", focus: "Structuring a talk, telling a story with a point, answering questions" },
+    { grades: "Grades 6–8", focus: "Persuasion, structured debate and speaking without reading from notes" },
+  ],
+  "financial-literacy": [
+    { grades: "Grades 2–3", focus: "Counting money, needs versus wants, saving up for something" },
+    { grades: "Grades 4–5", focus: "Making a budget, comparing prices, ways people earn money" },
+    { grades: "Grades 6–8", focus: "Interest, investing basics and planning for bigger goals" },
+  ],
+  entrepreneurship: [
+    { grades: "Grades 2–3", focus: "Noticing problems and inventing creative fixes" },
+    { grades: "Grades 4–5", focus: "Designing a product and working through ideas as a team" },
+    { grades: "Grades 6–8", focus: "Costs, pricing, simple business plans and pitching" },
+  ],
+};
+
+export const comparison = [
+  { topic: "How kids learn", typical: "Listen, take notes, move on", ours: "Speak, budget and build in every class" },
+  { topic: "Class size", typical: "Big classes, little time to talk", ours: "15 students max, so everyone participates" },
+  { topic: "Money skills", typical: "Rarely taught, or only in theory", ours: "Real budgets with real numbers" },
+  { topic: "Projects", typical: "Worksheets with one right answer", ours: "Ideas your child designs and pitches" },
+  { topic: "Feedback", typical: "A grade at the end", ours: "Live feedback from the instructor, every week" },
 ];
 
 export const testimonials = [

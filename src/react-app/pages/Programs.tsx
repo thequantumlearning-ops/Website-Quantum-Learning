@@ -33,7 +33,7 @@ export default function Programs() {
       {tracks.map((t, idx) => {
         const Icon = icons[t.id as keyof typeof icons];
         return (
-          <section key={t.id} id={t.id} className={`scroll-mt-20 ${idx % 2 === 1 ? "bg-ink-soft" : ""} border-b border-ink-line`}>
+          <section key={t.id} id={t.id} className={`scroll-mt-32 ${idx % 2 === 1 ? "bg-ink-soft" : ""} border-b border-ink-line`}>
             <Container className="grid gap-12 py-20 lg:grid-cols-2 lg:gap-20">
               <div>
                 <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600/15 text-blue-400">
