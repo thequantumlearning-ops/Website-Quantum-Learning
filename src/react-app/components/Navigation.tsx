@@ -42,7 +42,10 @@ export default function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-5 md:flex">
+          <a href={SITE.courseUrl} className="text-[15px] font-medium text-gray-400 transition-colors hover:text-white">
+            Self-paced beta
+          </a>
           <Link
             to="/schedule"
             className="inline-flex h-10 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white transition hover:bg-blue-500"
@@ -76,6 +79,9 @@ export default function Navigation() {
                 {l.label}
               </NavLink>
             ))}
+            <a href={SITE.courseUrl} className="py-3 text-base font-medium text-gray-300">
+              Self-paced beta
+            </a>
             <Link
               to="/schedule"
               className="mt-3 inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 font-semibold text-white"

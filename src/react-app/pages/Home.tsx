@@ -106,7 +106,7 @@ export default function Home() {
             </Heading>
             <p className="mt-6 max-w-xl text-lg leading-[1.6] text-gray-300">
               Live weekend classes on Zoom in public speaking, financial literacy and entrepreneurship, capped at{" "}
-              {SITE.maxClassSize} students so every child participates. Self-paced courses are coming soon for families
+              {SITE.maxClassSize} students so every child participates. Self-paced courses are in private beta for families
               who need more flexibility.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
@@ -298,7 +298,7 @@ export default function Home() {
         <Container className="py-24 sm:py-28">
           <div className="max-w-2xl">
             <Eyebrow>Ways to learn</Eyebrow>
-            <Heading className="mt-4">Live classes now. Self-paced coming soon.</Heading>
+            <Heading className="mt-4">Live classes or self-paced.</Heading>
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
             <div className="rounded-2xl border border-blue-500/30 bg-ink-soft p-8 shadow-soft sm:p-10">
@@ -335,19 +335,16 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <h3 className="font-display text-2xl font-bold tracking-tightish">Self-paced</h3>
                 <span className="rounded-full border border-ink-line px-3 py-1 text-sm font-semibold text-gray-400">
-                  Coming soon
+                  Private beta
                 </span>
               </div>
               <p className="mt-3 leading-[1.6] text-gray-400">
                 Recorded lessons kids can take on their own schedule, with weekly check-ins from an instructor.
               </p>
               <div className="mt-8">
-                <Button
-                  to={`mailto:${SITE.email}?subject=${encodeURIComponent("Self-paced waitlist")}`}
-                  variant="secondary"
-                >
+                <Button to={SITE.courseUrl} variant="secondary">
                   <PlayCircle className="h-4 w-4" aria-hidden="true" />
-                  Join the waitlist
+                  Self-paced beta
                 </Button>
               </div>
             </div>

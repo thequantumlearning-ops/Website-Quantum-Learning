@@ -11,6 +11,10 @@ export const SITE = {
   courseCount: 21,
   // General "Enroll" buttons send parents to the course list on the pricing page.
   enrollUrl: "/pricing#courses",
+  // The self-paced course app (Cloudflare Pages project skillsvera-test). It's in private beta:
+  // visitors see a "coming soon" page unless they have a beta code. Switch to
+  // https://course.skillsvera.com once that DNS record is added.
+  courseUrl: "https://skillsvera-test.pages.dev",
   // Paste each course's Stripe Payment Link here. Until a link is set, its Enroll button opens the booking page.
   paymentLinks: {
     "public-speaking": "",

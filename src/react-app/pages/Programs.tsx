@@ -79,12 +79,15 @@ export default function Programs() {
         <Container className="py-20">
           <div className="grid gap-10 lg:grid-cols-3">
             <div>
-              <Eyebrow>Coming soon</Eyebrow>
+              <Eyebrow>Private beta</Eyebrow>
               <Heading as="h3" className="mt-3">Self-paced learning</Heading>
             </div>
             <p className="text-lg leading-relaxed text-gray-300 lg:col-span-2">
-              We're building self-paced versions of our courses for busy families, with prerecorded lessons and weekly
-              check-ins from an instructor. Book a call if you'd like to hear when they launch.
+              Self-paced versions of our courses for busy families are in private beta with a small group of
+              testers. Book a call if you'd like to hear when they open to everyone.{" "}
+              <a href={SITE.courseUrl} className="font-semibold text-blue-400 hover:text-blue-300">
+                Beta testers sign in here
+              </a>
             </p>
           </div>
         </Container>
